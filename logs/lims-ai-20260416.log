@@ -1,0 +1,29 @@
+2026-04-16 11:04:15.745 [INF] Starting LIMS AI Middleware...
+2026-04-16 11:04:17.255 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-04-16 11:25:41.238 +05:30 [INF] HTTP POST /api/lims/process responded 400 in 142.148 ms
+2026-04-16 11:46:55.889 +05:30 [INF] [27be8cd826004af4aa226f0ead4d8125] POST /api/lims/process operation=validate_report source=RawData
+2026-04-16 11:46:55.896 +05:30 [INF] [e9266e85935a41758da9ef4debf3e90c] Processing operation='validate_report' from source='RawData'
+2026-04-16 11:47:15.360 +05:30 [INF] [e9266e85935a41758da9ef4debf3e90c] ← Claude claude-sonnet-4-6 | in=7493 out=1024 tokens | stop=max_tokens
+2026-04-16 11:47:15.373 +05:30 [WRN] [e9266e85935a41758da9ef4debf3e90c] Claude response was not valid JSON — wrapping as raw text. First 200 chars: **Escherichia coli (id: 274)**
+
+- `chemicalIds`: Trailing spaces detected in values "0001      " and "0003      "
+- `observationRows[0].incubationTemp`: Missing unit — "30-35" should be "30-35°C"
+- `o
+System.Text.Json.JsonException: '*' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0.
+ ---> System.Text.Json.JsonReaderException: '*' is an invalid start of a value. LineNumber: 0 | BytePositionInLine: 0.
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+   at System.Text.Json.Utf8JsonReader.ConsumeValue(Byte marker)
+   at System.Text.Json.Utf8JsonReader.ReadFirstToken(Byte first)
+   at System.Text.Json.Utf8JsonReader.ReadSingleSegment()
+   at System.Text.Json.Utf8JsonReader.Read()
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, JsonReaderException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at AIWebservice.Services.LimsProcessingService.ParseClaudeReply(String rawText, String correlationId) in C:\bikash\.net webservices\AIWebservice\Services\LimsProcessingService.cs:line 112
+2026-04-16 11:47:15.425 +05:30 [INF] [e9266e85935a41758da9ef4debf3e90c] Completed | model=claude-sonnet-4-6 | tokens=8517
+2026-04-16 11:47:15.440 +05:30 [INF] HTTP POST /api/lims/process responded 200 in 19573.532 ms

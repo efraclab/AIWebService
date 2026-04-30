@@ -1,0 +1,111 @@
+2026-04-30 11:09:58.925 [INF] Starting LIMS AI Middleware...
+2026-04-30 11:09:59.831 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-04-30 11:10:01.462 +05:30 [INF] [27219171a4994126a6a22759de670bf0] POST /api/lims/process operation=validate_report source=RawData
+2026-04-30 11:10:01.471 +05:30 [INF] [c5b43226746c4b0da42b9822c5529f28] Processing operation='validate_report' from source='RawData'
+2026-04-30 11:10:03.757 +05:30 [ERR] [c5b43226746c4b0da42b9822c5529f28] Claude refused the request (stop_reason=refusal). Raw={"model":"claude-sonnet-4-6","id":"msg_015DhdPc8tZxggrK32TvnS9c","type":"message","role":"assistant","content":[],"stop_reason":"refusal","stop_sequence":null,"stop_details":null,"usage":{"input_tokens":2862,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"output_tokens":1,"service_tier":"standard","inference_geo":"global"}}
+2026-04-30 11:10:03.769 +05:30 [ERR] HTTP POST /api/lims/process responded 500 in 2399.728 ms
+AIWebservice.Models.AnthropicApiException: The AI model refused to process this request due to content policy. Ensure the system prompt establishes a clear compliance/data-auditing context.
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 144
+   at AIWebservice.Services.LimsProcessingService.ProcessAsync(LimsRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\LimsProcessingService.cs:line 59
+   at AIWebservice.Controllers.LimsController.LimsController.Process(LimsRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\LimsController\LimsController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-04-30 11:10:03.807 +05:30 [ERR] [27219171a4994126a6a22759de670bf0] Unhandled AnthropicApiException: The AI model refused to process this request due to content policy. Ensure the system prompt establishes a clear compliance/data-auditing context.
+AIWebservice.Models.AnthropicApiException: The AI model refused to process this request due to content policy. Ensure the system prompt establishes a clear compliance/data-auditing context.
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 144
+   at AIWebservice.Services.LimsProcessingService.ProcessAsync(LimsRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\LimsProcessingService.cs:line 59
+   at AIWebservice.Controllers.LimsController.LimsController.Process(LimsRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\LimsController\LimsController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\bikash\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-04-30 11:11:41.260 +05:30 [INF] [7edab06ac8c141a8b68cc39d33e013a0] POST /api/lims/process operation=validate_report source=RawData
+2026-04-30 11:11:41.264 +05:30 [INF] [44d241ee212d445797a3d30e662fde58] Processing operation='validate_report' from source='RawData'
+2026-04-30 11:11:56.445 +05:30 [ERR] [44d241ee212d445797a3d30e662fde58] Network error reaching Anthropic API
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.Net.Http.HttpIOException: The response ended prematurely. (ResponseEnded)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 89
+2026-04-30 11:11:56.452 +05:30 [ERR] HTTP POST /api/lims/process responded 500 in 15194.633 ms
+AIWebservice.Models.AnthropicApiException: A network error occurred while contacting the Anthropic API: An error occurred while sending the request.
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 102
+   at AIWebservice.Services.LimsProcessingService.ProcessAsync(LimsRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\LimsProcessingService.cs:line 59
+   at AIWebservice.Controllers.LimsController.LimsController.Process(LimsRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\LimsController\LimsController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-04-30 11:11:56.458 +05:30 [ERR] [7edab06ac8c141a8b68cc39d33e013a0] Unhandled AnthropicApiException: A network error occurred while contacting the Anthropic API: An error occurred while sending the request.
+AIWebservice.Models.AnthropicApiException: A network error occurred while contacting the Anthropic API: An error occurred while sending the request.
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 102
+   at AIWebservice.Services.LimsProcessingService.ProcessAsync(LimsRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\LimsProcessingService.cs:line 59
+   at AIWebservice.Controllers.LimsController.LimsController.Process(LimsRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\LimsController\LimsController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\bikash\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-04-30 11:12:08.113 +05:30 [INF] [4c34e9a0974446839121a29062daeef5] POST /api/lims/process operation=validate_report source=RawData
+2026-04-30 11:12:08.116 +05:30 [INF] [7fa96e21c3424922985c87b48ce5ec59] Processing operation='validate_report' from source='RawData'
+2026-04-30 11:12:31.779 +05:30 [INF] [7fa96e21c3424922985c87b48ce5ec59] ← Claude claude-sonnet-4-6 | in=2931 out=1345 tokens | stop=end_turn
+2026-04-30 11:12:31.797 +05:30 [INF] [7fa96e21c3424922985c87b48ce5ec59] Completed | model=claude-sonnet-4-6 | tokens=4276
+2026-04-30 11:12:31.815 +05:30 [INF] HTTP POST /api/lims/process responded 200 in 23706.992 ms
+2026-04-30 11:18:41.619 +05:30 [INF] HTTP OPTIONS /api/lims/process responded 204 in 3.137 ms
+2026-04-30 11:18:41.633 +05:30 [INF] [40111bd57a5d4f3db1a744f904bcfc9a] POST /api/lims/process operation=validate_report source=RawData
+2026-04-30 11:18:41.638 +05:30 [INF] [1bdb89de0a3e48609d8d24bade9ceb4b] Processing operation='validate_report' from source='RawData'
+2026-04-30 11:19:23.162 +05:30 [INF] [1bdb89de0a3e48609d8d24bade9ceb4b] ← Claude claude-sonnet-4-6 | in=2773 out=2463 tokens | stop=end_turn
+2026-04-30 11:19:23.176 +05:30 [INF] [1bdb89de0a3e48609d8d24bade9ceb4b] Completed | model=claude-sonnet-4-6 | tokens=5236
+2026-04-30 11:19:23.192 +05:30 [INF] HTTP POST /api/lims/process responded 200 in 41561.258 ms
+2026-04-30 11:19:34.313 +05:30 [INF] HTTP OPTIONS /api/lims/process responded 204 in 0.101 ms
+2026-04-30 11:19:34.320 +05:30 [INF] [e759b1ec34d14861bffb1de04fa2022a] POST /api/lims/process operation=validate_report source=RawData
+2026-04-30 11:19:34.324 +05:30 [INF] [4a9eb612effd4f819fea7dcbee220a9f] Processing operation='validate_report' from source='RawData'
+2026-04-30 11:20:09.139 +05:30 [INF] [4a9eb612effd4f819fea7dcbee220a9f] ← Claude claude-sonnet-4-6 | in=2773 out=2241 tokens | stop=end_turn
+2026-04-30 11:20:09.151 +05:30 [INF] [4a9eb612effd4f819fea7dcbee220a9f] Completed | model=claude-sonnet-4-6 | tokens=5014
+2026-04-30 11:20:09.160 +05:30 [INF] HTTP POST /api/lims/process responded 200 in 34840.681 ms
