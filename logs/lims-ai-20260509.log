@@ -1,0 +1,379 @@
+2026-05-09 15:51:56.959 [INF] Starting LIMS AI Middleware...
+2026-05-09 15:51:58.027 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-05-09 15:52:50.986 [INF] Starting LIMS AI Middleware...
+2026-05-09 15:52:51.262 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-05-09 15:53:01.722 [INF] Starting LIMS AI Middleware...
+2026-05-09 15:53:03.023 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-05-09 15:53:25.239 [INF] Starting LIMS AI Middleware...
+2026-05-09 15:53:26.104 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-05-09 15:54:21.247 [INF] Starting LIMS AI Middleware...
+2026-05-09 15:54:21.526 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-05-09 16:28:35.506 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 15.538 ms
+2026-05-09 16:28:35.792 +05:30 [INF] [9e15278d-f7f8-429c-9927-3e0d12d49b29] POST /api/pdf-review/process files=1
+2026-05-09 16:28:35.809 +05:30 [INF] [9e15278d-f7f8-429c-9927-3e0d12d49b29] PDF review starting | files=1 | promptLen=1341
+2026-05-09 16:28:37.422 +05:30 [INF] [9e15278d-f7f8-429c-9927-3e0d12d49b29] Uploaded file Aglo-Polymers-Pvt.-Ltd.-Mar-2026-Report-No-260321003.pdf (319835 bytes, application/pdf) → file_011CarspFQ28mnWCg2zq7LFY
+2026-05-09 16:28:37.860 +05:30 [ERR] [9e15278d-f7f8-429c-9927-3e0d12d49b29] Anthropic returned HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CarspJejKkPjYR8QGnd1B"}
+2026-05-09 16:28:38.708 +05:30 [ERR] HTTP POST /api/pdf-review/process responded 500 in 3085.244 ms
+AIWebservice.Models.AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+   at AIWebservice.Services.ClaudeService.EnsureSuccessAsync(HttpResponseMessage response, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 366
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 267
+   at AIWebservice.Services.ClaudeService.SendWithDocumentsAsync(String systemPrompt, String userPrompt, IReadOnlyList`1 fileIds, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 125
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 66
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-05-09 16:28:38.775 +05:30 [ERR] [9e15278d-f7f8-429c-9927-3e0d12d49b29] Unhandled AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+AIWebservice.Models.AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+   at AIWebservice.Services.ClaudeService.EnsureSuccessAsync(HttpResponseMessage response, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 366
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 267
+   at AIWebservice.Services.ClaudeService.SendWithDocumentsAsync(String systemPrompt, String userPrompt, IReadOnlyList`1 fileIds, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 125
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 66
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\bikash\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-05-09 16:30:05.639 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.875 ms
+2026-05-09 16:30:05.663 +05:30 [INF] [b3cb72bb-9b38-4a6a-a311-136784d35ced] POST /api/pdf-review/process files=1
+2026-05-09 16:30:05.667 +05:30 [INF] [b3cb72bb-9b38-4a6a-a311-136784d35ced] PDF review starting | files=1 | promptLen=1341
+2026-05-09 16:30:07.353 +05:30 [INF] [b3cb72bb-9b38-4a6a-a311-136784d35ced] Uploaded file Aglo-Polymers-Pvt.-Ltd.-Mar-2026-Report-No-260321003.pdf (319835 bytes, application/pdf) → file_011CarsvsDEAcCop6FrrmGw7
+2026-05-09 16:30:07.732 +05:30 [ERR] [b3cb72bb-9b38-4a6a-a311-136784d35ced] Anthropic returned HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Carsvw3A5NhXrYcUQQqFG"}
+2026-05-09 16:30:08.963 +05:30 [ERR] HTTP POST /api/pdf-review/process responded 500 in 3308.570 ms
+AIWebservice.Models.AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+   at AIWebservice.Services.ClaudeService.EnsureSuccessAsync(HttpResponseMessage response, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 366
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 267
+   at AIWebservice.Services.ClaudeService.SendWithDocumentsAsync(String systemPrompt, String userPrompt, IReadOnlyList`1 fileIds, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 125
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 66
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-05-09 16:30:09.006 +05:30 [ERR] [b3cb72bb-9b38-4a6a-a311-136784d35ced] Unhandled AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+AIWebservice.Models.AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+   at AIWebservice.Services.ClaudeService.EnsureSuccessAsync(HttpResponseMessage response, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 366
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 267
+   at AIWebservice.Services.ClaudeService.SendWithDocumentsAsync(String systemPrompt, String userPrompt, IReadOnlyList`1 fileIds, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 125
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 66
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\bikash\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-05-09 16:33:17.157 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.113 ms
+2026-05-09 16:33:17.183 +05:30 [INF] [76b62c11-6209-45ac-a799-85a4eaab318a] POST /api/pdf-review/process files=1
+2026-05-09 16:33:17.186 +05:30 [INF] [76b62c11-6209-45ac-a799-85a4eaab318a] PDF review starting | files=1 | promptLen=1341
+2026-05-09 16:33:18.556 +05:30 [INF] [76b62c11-6209-45ac-a799-85a4eaab318a] Uploaded file Amara-Raja-Enterprises-Original Report.pdf (385264 bytes, application/pdf) → file_011CartAySQrkg9dqe9greEP
+2026-05-09 16:33:18.940 +05:30 [ERR] [76b62c11-6209-45ac-a799-85a4eaab318a] Anthropic returned HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CartB2WxMX1oXrfjssjeY"}
+2026-05-09 16:33:19.754 +05:30 [ERR] HTTP POST /api/pdf-review/process responded 500 in 2578.296 ms
+AIWebservice.Models.AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+   at AIWebservice.Services.ClaudeService.EnsureSuccessAsync(HttpResponseMessage response, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 366
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 267
+   at AIWebservice.Services.ClaudeService.SendWithDocumentsAsync(String systemPrompt, String userPrompt, IReadOnlyList`1 fileIds, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 125
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 66
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-05-09 16:33:19.793 +05:30 [ERR] [76b62c11-6209-45ac-a799-85a4eaab318a] Unhandled AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+AIWebservice.Models.AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+   at AIWebservice.Services.ClaudeService.EnsureSuccessAsync(HttpResponseMessage response, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 366
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 267
+   at AIWebservice.Services.ClaudeService.SendWithDocumentsAsync(String systemPrompt, String userPrompt, IReadOnlyList`1 fileIds, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 125
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 66
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\bikash\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-05-09 16:36:21.604 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.237 ms
+2026-05-09 16:36:21.647 +05:30 [INF] [dcd434ad-aba5-4769-96bc-e66381f7b7a6] POST /api/pdf-review/process files=1
+2026-05-09 16:36:21.651 +05:30 [INF] [dcd434ad-aba5-4769-96bc-e66381f7b7a6] PDF review starting | files=1 | promptLen=1341
+2026-05-09 16:36:22.912 +05:30 [INF] [dcd434ad-aba5-4769-96bc-e66381f7b7a6] Uploaded file Amara-Raja-Enterprises-Original Report.pdf (385264 bytes, application/pdf) → file_011CartQZyv67tF2G7szmz3e
+2026-05-09 16:36:23.286 +05:30 [ERR] [dcd434ad-aba5-4769-96bc-e66381f7b7a6] Anthropic returned HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CartQcj7fBf4Uxdko2KTW"}
+2026-05-09 16:36:24.084 +05:30 [ERR] HTTP POST /api/pdf-review/process responded 500 in 2459.821 ms
+AIWebservice.Models.AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+   at AIWebservice.Services.ClaudeService.EnsureSuccessAsync(HttpResponseMessage response, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 366
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 267
+   at AIWebservice.Services.ClaudeService.SendWithDocumentsAsync(String systemPrompt, String userPrompt, IReadOnlyList`1 fileIds, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 125
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 66
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-05-09 16:36:24.118 +05:30 [ERR] [dcd434ad-aba5-4769-96bc-e66381f7b7a6] Unhandled AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+AIWebservice.Models.AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+   at AIWebservice.Services.ClaudeService.EnsureSuccessAsync(HttpResponseMessage response, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 366
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 267
+   at AIWebservice.Services.ClaudeService.SendWithDocumentsAsync(String systemPrompt, String userPrompt, IReadOnlyList`1 fileIds, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 125
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 66
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\bikash\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-05-09 16:38:26.658 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.131 ms
+2026-05-09 16:38:26.682 +05:30 [INF] [51c4fe42-8a1e-4e15-90cf-6e0e5914c858] POST /api/pdf-review/process files=1
+2026-05-09 16:38:26.684 +05:30 [INF] [51c4fe42-8a1e-4e15-90cf-6e0e5914c858] PDF review starting | files=1 | promptLen=1341
+2026-05-09 16:38:29.513 +05:30 [INF] [51c4fe42-8a1e-4e15-90cf-6e0e5914c858] Uploaded file ALPLA-India-Pvt.-Ltd.-Mar-2026-Report-No-260319013.pdf (320033 bytes, application/pdf) → file_011CartZu9LTMDo21oZX319j
+2026-05-09 16:38:29.876 +05:30 [ERR] [51c4fe42-8a1e-4e15-90cf-6e0e5914c858] Anthropic returned HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CartZwx1PdFSTHCjKBbU4"}
+2026-05-09 16:38:30.657 +05:30 [ERR] HTTP POST /api/pdf-review/process responded 500 in 3979.996 ms
+AIWebservice.Models.AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+   at AIWebservice.Services.ClaudeService.EnsureSuccessAsync(HttpResponseMessage response, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 366
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 267
+   at AIWebservice.Services.ClaudeService.SendWithDocumentsAsync(String systemPrompt, String userPrompt, IReadOnlyList`1 fileIds, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 125
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 66
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-05-09 16:38:30.683 +05:30 [ERR] [51c4fe42-8a1e-4e15-90cf-6e0e5914c858] Unhandled AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+AIWebservice.Models.AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+   at AIWebservice.Services.ClaudeService.EnsureSuccessAsync(HttpResponseMessage response, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 366
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 267
+   at AIWebservice.Services.ClaudeService.SendWithDocumentsAsync(String systemPrompt, String userPrompt, IReadOnlyList`1 fileIds, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 125
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 66
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\bikash\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-05-09 16:57:40.140 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.170 ms
+2026-05-09 16:57:40.173 +05:30 [INF] [7bf70191-cf0f-47bd-96c9-dcb73c019a7b] POST /api/pdf-review/process files=1
+2026-05-09 16:57:40.176 +05:30 [INF] [7bf70191-cf0f-47bd-96c9-dcb73c019a7b] PDF review starting | files=1 | promptLen=1341
+2026-05-09 16:57:43.349 +05:30 [INF] [7bf70191-cf0f-47bd-96c9-dcb73c019a7b] Uploaded file Amara-Raja-Enterprises-Original Report.pdf (385264 bytes, application/pdf) → file_011Carv2x8oH51C7bmeYdWQX
+2026-05-09 16:57:51.627 +05:30 [ERR] [7bf70191-cf0f-47bd-96c9-dcb73c019a7b] Anthropic returned HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Carv3Zrd8NnAeSEnGPiJU"}
+2026-05-09 16:57:52.423 +05:30 [ERR] HTTP POST /api/pdf-review/process responded 500 in 12256.073 ms
+AIWebservice.Models.AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+   at AIWebservice.Services.ClaudeService.EnsureSuccessAsync(HttpResponseMessage response, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 366
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 267
+   at AIWebservice.Services.ClaudeService.SendWithDocumentsAsync(String systemPrompt, String userPrompt, IReadOnlyList`1 fileIds, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 125
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 66
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-05-09 16:57:52.460 +05:30 [ERR] [7bf70191-cf0f-47bd-96c9-dcb73c019a7b] Unhandled AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+AIWebservice.Models.AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+   at AIWebservice.Services.ClaudeService.EnsureSuccessAsync(HttpResponseMessage response, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 366
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 267
+   at AIWebservice.Services.ClaudeService.SendWithDocumentsAsync(String systemPrompt, String userPrompt, IReadOnlyList`1 fileIds, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 125
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 66
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\bikash\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-05-09 17:26:00.634 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.238 ms
+2026-05-09 17:26:00.664 +05:30 [INF] [90f7c50f-b812-451f-b664-c48e0c6a9220] POST /api/pdf-review/process files=1
+2026-05-09 17:26:00.668 +05:30 [INF] [90f7c50f-b812-451f-b664-c48e0c6a9220] PDF review starting | files=1 | promptLen=6752
+2026-05-09 17:26:02.121 +05:30 [INF] [90f7c50f-b812-451f-b664-c48e0c6a9220] Uploaded file Amara-Raja-Enterprises-Original Report.pdf (385264 bytes, application/pdf) → file_011CarxCB6Pm1wg2EeCsWVyL
+2026-05-09 17:27:04.982 +05:30 [INF] [90f7c50f-b812-451f-b664-c48e0c6a9220] ← Claude claude-sonnet-4-6 | in=16469 out=3073 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-09 17:27:04.999 +05:30 [INF] [90f7c50f-b812-451f-b664-c48e0c6a9220] PDF review completed | model=claude-sonnet-4-6 | tokens=19542
+2026-05-09 17:27:05.885 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 65226.003 ms
+2026-05-09 17:53:32.817 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.180 ms
+2026-05-09 17:53:32.844 +05:30 [INF] [9d679c55-f4b3-4a06-9cbb-a3e243f9d8fe] POST /api/pdf-review/process files=1
+2026-05-09 17:53:32.849 +05:30 [INF] [9d679c55-f4b3-4a06-9cbb-a3e243f9d8fe] PDF review starting | files=1 | promptLen=6752
+2026-05-09 17:53:35.596 +05:30 [INF] [9d679c55-f4b3-4a06-9cbb-a3e243f9d8fe] Uploaded file Aglo-Polymers-Pvt.-Ltd.-Mar-2026-Report-No-260321003.pdf (319835 bytes, application/pdf) → file_011CarzJ4HX6GgNwc1uMLLhs
+2026-05-09 17:54:14.052 +05:30 [INF] [9d679c55-f4b3-4a06-9cbb-a3e243f9d8fe] ← Claude claude-sonnet-4-6 | in=6551 out=1863 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-09 17:54:14.065 +05:30 [INF] [9d679c55-f4b3-4a06-9cbb-a3e243f9d8fe] PDF review completed | model=claude-sonnet-4-6 | tokens=8414
+2026-05-09 17:54:14.912 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 42071.623 ms
+2026-05-09 18:03:26.833 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.151 ms
+2026-05-09 18:03:26.931 +05:30 [INF] [dc86f095-88f1-42c0-81c8-bb6b97110960] POST /api/pdf-review/process files=2
+2026-05-09 18:03:26.936 +05:30 [INF] [dc86f095-88f1-42c0-81c8-bb6b97110960] PDF review starting | files=2 | promptLen=6752
+2026-05-09 18:03:28.727 +05:30 [INF] [dc86f095-88f1-42c0-81c8-bb6b97110960] Uploaded file FDS-GOV-251003022.pdf (517441 bytes, application/pdf) → file_011Cas13nGKs2DcH5MbQykod
+2026-05-09 18:03:31.162 +05:30 [INF] [dc86f095-88f1-42c0-81c8-bb6b97110960] Uploaded file AMVR_AMITRIPTYLINE_RPT_DR_2024_043_00_20_11_2024_Validation_Final.pdf (3255801 bytes, application/pdf) → file_011Cas13xeAintueqvDEFjzJ
+2026-05-09 18:04:56.950 +05:30 [INF] [dc86f095-88f1-42c0-81c8-bb6b97110960] ← Claude claude-sonnet-4-6 | in=84022 out=4096 tokens | cache_write=0 cache_read=0 | stop=max_tokens
+2026-05-09 18:04:56.980 +05:30 [INF] [dc86f095-88f1-42c0-81c8-bb6b97110960] PDF review completed | model=claude-sonnet-4-6 | tokens=88118
+2026-05-09 18:04:58.756 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 91885.683 ms
+2026-05-09 18:09:58.961 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.180 ms
+2026-05-09 18:09:58.986 +05:30 [INF] [633e733b-c48d-4cc4-a60a-86d1da1b3a99] POST /api/pdf-review/process files=1
+2026-05-09 18:09:58.987 +05:30 [INF] [633e733b-c48d-4cc4-a60a-86d1da1b3a99] PDF review starting | files=1 | promptLen=6752
+2026-05-09 18:10:00.540 +05:30 [INF] [633e733b-c48d-4cc4-a60a-86d1da1b3a99] Uploaded file FDS-GOV-251003022.pdf (517441 bytes, application/pdf) → file_011Cas1YfTMqdUk8TPen3A2w
+2026-05-09 18:10:50.130 +05:30 [INF] [633e733b-c48d-4cc4-a60a-86d1da1b3a99] ← Claude claude-sonnet-4-6 | in=14787 out=2740 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-09 18:10:50.149 +05:30 [INF] [633e733b-c48d-4cc4-a60a-86d1da1b3a99] PDF review completed | model=claude-sonnet-4-6 | tokens=17527
+2026-05-09 18:10:50.996 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 52015.861 ms
+2026-05-09 18:21:28.069 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.189 ms
+2026-05-09 18:21:28.123 +05:30 [INF] [65417000-738b-4596-9548-dc412f96e813] POST /api/pdf-review/process files=2
+2026-05-09 18:21:28.126 +05:30 [INF] [65417000-738b-4596-9548-dc412f96e813] PDF review starting | files=2 | promptLen=6752
+2026-05-09 18:21:29.497 +05:30 [INF] [65417000-738b-4596-9548-dc412f96e813] Uploaded file Big-Carbonics-Pvt.-Ltd.-Mar-2026-Report-No-260331001.pdf (335804 bytes, application/pdf) → file_011Cas2RT1BxRQXL8qmn1RAn
+2026-05-09 18:21:30.816 +05:30 [INF] [65417000-738b-4596-9548-dc412f96e813] Uploaded file KL-Beverages-Apr-2026-Report-No-260420001.pdf (402226 bytes, application/pdf) → file_011Cas2RYd25gTDrcek3rWe5
+2026-05-09 18:22:50.124 +05:30 [INF] [65417000-738b-4596-9548-dc412f96e813] ← Claude claude-sonnet-4-6 | in=42072 out=4096 tokens | cache_write=0 cache_read=0 | stop=max_tokens
+2026-05-09 18:22:50.136 +05:30 [INF] [65417000-738b-4596-9548-dc412f96e813] PDF review completed | model=claude-sonnet-4-6 | tokens=46168
+2026-05-09 18:22:51.754 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 83645.845 ms
+2026-05-09 18:28:43.327 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.189 ms
+2026-05-09 18:28:43.387 +05:30 [INF] [5711e6a8-71de-4e60-b6c1-ae04099ad55c] POST /api/pdf-review/process files=2
+2026-05-09 18:28:43.396 +05:30 [INF] [5711e6a8-71de-4e60-b6c1-ae04099ad55c] PDF review starting | files=2 | promptLen=7114
+2026-05-09 18:28:44.950 +05:30 [INF] [5711e6a8-71de-4e60-b6c1-ae04099ad55c] Uploaded file Big-Carbonics-Pvt.-Ltd.-Mar-2026-Report-No-260331001.pdf (335804 bytes, application/pdf) → file_011Cas2yYsYVdwCwnt6kwgW4
+2026-05-09 18:28:46.209 +05:30 [INF] [5711e6a8-71de-4e60-b6c1-ae04099ad55c] Uploaded file KL-Beverages-Apr-2026-Report-No-260420001.pdf (402226 bytes, application/pdf) → file_011Cas2ye5Kwsjor2xS3su6G
+2026-05-09 18:29:48.221 +05:30 [INF] [5711e6a8-71de-4e60-b6c1-ae04099ad55c] ← Claude claude-sonnet-4-6 | in=42165 out=3780 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-09 18:29:48.236 +05:30 [INF] [5711e6a8-71de-4e60-b6c1-ae04099ad55c] PDF review completed | model=claude-sonnet-4-6 | tokens=45945
+2026-05-09 18:29:49.811 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 66435.756 ms

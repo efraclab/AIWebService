@@ -1,0 +1,454 @@
+2026-05-13 00:00:28.235 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.361 ms
+2026-05-13 00:00:28.300 +05:30 [INF] [d5b05865-95aa-424c-a23f-1857869f49c1] POST /api/pdf-review/process files=1
+2026-05-13 00:00:28.312 +05:30 [INF] [d5b05865-95aa-424c-a23f-1857869f49c1] PDF review starting | files=1 | promptLen=1341
+2026-05-13 00:00:30.009 +05:30 [INF] [d5b05865-95aa-424c-a23f-1857869f49c1] Uploaded file FDS-GOV-251003022.pdf (517441 bytes, application/pdf) → file_011Cay9hdFND9QmnHzGQ3Sdy
+2026-05-13 00:01:10.543 +05:30 [INF] [d5b05865-95aa-424c-a23f-1857869f49c1] ← Claude claude-sonnet-4-6 | in=13238 out=2071 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-13 00:01:10.558 +05:30 [INF] [d5b05865-95aa-424c-a23f-1857869f49c1] PDF review completed | model=claude-sonnet-4-6 | tokens=15309
+2026-05-13 00:01:11.391 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 43107.156 ms
+2026-05-13 00:02:22.315 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.211 ms
+2026-05-13 00:02:22.341 +05:30 [INF] HTTP POST /api/pdf-review/process responded 400 in 6.121 ms
+2026-05-13 00:03:50.811 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.108 ms
+2026-05-13 00:03:50.833 +05:30 [INF] HTTP POST /api/pdf-review/process responded 400 in 3.994 ms
+2026-05-13 00:04:14.633 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.098 ms
+2026-05-13 00:04:14.656 +05:30 [INF] HTTP POST /api/pdf-review/process responded 400 in 5.775 ms
+2026-05-13 00:04:15.462 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.111 ms
+2026-05-13 00:04:15.484 +05:30 [INF] HTTP POST /api/pdf-review/process responded 400 in 5.360 ms
+2026-05-13 00:04:17.511 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.091 ms
+2026-05-13 00:04:17.531 +05:30 [INF] HTTP POST /api/pdf-review/process responded 400 in 4.308 ms
+2026-05-13 00:04:22.889 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.139 ms
+2026-05-13 00:04:22.910 +05:30 [INF] HTTP POST /api/pdf-review/process responded 400 in 4.045 ms
+2026-05-13 00:04:31.344 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.088 ms
+2026-05-13 00:04:31.368 +05:30 [INF] [895a2fd3-3d21-4065-a434-b30811133fea] POST /api/pdf-review/process files=1
+2026-05-13 00:04:31.370 +05:30 [INF] [895a2fd3-3d21-4065-a434-b30811133fea] PDF review starting | files=1 | promptLen=1341
+2026-05-13 00:04:32.689 +05:30 [INF] [895a2fd3-3d21-4065-a434-b30811133fea] Uploaded file Orissa-State-Ware-Housing-Corporation-Mar-2026-Report-No-260319008.pdf (338554 bytes, application/pdf) → file_011CayA1Wt8ZM9Mit588jtTg
+2026-05-13 00:04:34.954 +05:30 [ERR] HTTP POST /api/pdf-review/process responded 500 in 3590.581 ms
+System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: The I/O operation has been aborted because of either a thread exit or an application request..
+ ---> System.Net.Sockets.SocketException (995): The I/O operation has been aborted because of either a thread exit or an application request.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 250
+   at AIWebservice.Services.ClaudeService.SendWithDocumentsAsync(String systemPrompt, String userPrompt, IReadOnlyList`1 fileIds, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 125
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 66
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-05-13 00:04:34.995 +05:30 [ERR] [895a2fd3-3d21-4065-a434-b30811133fea] Unhandled TaskCanceledException: The operation was canceled.
+System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: The I/O operation has been aborted because of either a thread exit or an application request..
+ ---> System.Net.Sockets.SocketException (995): The I/O operation has been aborted because of either a thread exit or an application request.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 250
+   at AIWebservice.Services.ClaudeService.SendWithDocumentsAsync(String systemPrompt, String userPrompt, IReadOnlyList`1 fileIds, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 125
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 66
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\bikash\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-05-13 00:10:51.626 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.129 ms
+2026-05-13 00:10:51.650 +05:30 [INF] HTTP POST /api/pdf-review/process responded 400 in 5.526 ms
+2026-05-13 00:17:13.748 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.183 ms
+2026-05-13 00:17:13.795 +05:30 [INF] HTTP POST /api/pdf-review/process responded 400 in 6.955 ms
+2026-05-13 00:18:43.148 [INF] Starting LIMS AI Middleware...
+2026-05-13 00:18:43.403 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-05-13 00:19:20.052 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 16.098 ms
+2026-05-13 00:19:20.372 +05:30 [INF] [1ff3fdc0-35e2-4c19-be7b-14a5a15a4ac9] POST /api/pdf-review/process files=1
+2026-05-13 00:19:20.398 +05:30 [INF] [1ff3fdc0-35e2-4c19-be7b-14a5a15a4ac9] PDF review starting | files=1 | promptLen=8824
+2026-05-13 00:19:22.143 +05:30 [INF] [1ff3fdc0-35e2-4c19-be7b-14a5a15a4ac9] Uploaded file FDS-GOV-251003022.pdf (517441 bytes, application/pdf) → file_011CayB95XUUef8uURd5gjra
+2026-05-13 00:20:15.128 +05:30 [INF] [1ff3fdc0-35e2-4c19-be7b-14a5a15a4ac9] ← Claude claude-sonnet-4-6 | in=15392 out=3351 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-13 00:20:15.135 +05:30 [INF] [1ff3fdc0-35e2-4c19-be7b-14a5a15a4ac9] PDF review completed | model=claude-sonnet-4-6 | tokens=18743
+2026-05-13 00:20:16.976 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 56787.969 ms
+2026-05-13 09:55:04.210 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.974 ms
+2026-05-13 09:55:04.249 +05:30 [INF] [74d00113-6734-4deb-903a-50caa222984c] POST /api/pdf-review/process files=1
+2026-05-13 09:55:04.251 +05:30 [INF] [74d00113-6734-4deb-903a-50caa222984c] PDF review starting | files=1 | promptLen=8824
+2026-05-13 09:55:05.915 +05:30 [INF] [74d00113-6734-4deb-903a-50caa222984c] Uploaded file Superior-Polymers-India-Pvt.-Ltd.-Apr-2026-Report-No-260418022.pdf (322142 bytes, application/pdf) → file_011Cayw3TAvsxq5tY8JgBHhN
+2026-05-13 09:55:51.119 +05:30 [INF] [74d00113-6734-4deb-903a-50caa222984c] ← Claude claude-sonnet-4-6 | in=7609 out=2838 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-13 09:55:51.126 +05:30 [INF] [74d00113-6734-4deb-903a-50caa222984c] PDF review completed | model=claude-sonnet-4-6 | tokens=10447
+2026-05-13 09:55:52.188 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 47951.823 ms
+2026-05-13 10:22:01.844 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.189 ms
+2026-05-13 10:22:01.872 +05:30 [INF] [93347b7a-a29c-4f54-b3ca-2711dcc7645f] POST /api/pdf-review/process files=1
+2026-05-13 10:22:01.877 +05:30 [INF] [93347b7a-a29c-4f54-b3ca-2711dcc7645f] PDF review starting | files=1 | promptLen=8824
+2026-05-13 10:22:03.378 +05:30 [INF] [93347b7a-a29c-4f54-b3ca-2711dcc7645f] Uploaded file Bharatiyam-Foods-&-Beverages-Reanalysis Report.pdf (399820 bytes, application/pdf) → file_011Cayy6gUSrp7t9Aep6YYq7
+2026-05-13 10:22:56.244 +05:30 [INF] [93347b7a-a29c-4f54-b3ca-2711dcc7645f] ← Claude claude-sonnet-4-6 | in=28749 out=2528 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-13 10:22:56.263 +05:30 [INF] [93347b7a-a29c-4f54-b3ca-2711dcc7645f] PDF review completed | model=claude-sonnet-4-6 | tokens=31277
+2026-05-13 10:22:57.102 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 55237.326 ms
+2026-05-13 10:38:20.699 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.169 ms
+2026-05-13 10:38:20.699 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.169 ms
+2026-05-13 10:38:20.724 +05:30 [INF] [474a804e-1577-4e57-86f1-00430fb879eb] POST /api/pdf-review/process files=1
+2026-05-13 10:38:20.724 +05:30 [INF] [3ef8f999-cd04-42bd-a747-edd77f4fd97e] POST /api/pdf-review/process files=1
+2026-05-13 10:38:20.726 +05:30 [INF] [474a804e-1577-4e57-86f1-00430fb879eb] PDF review starting | files=1 | promptLen=8824
+2026-05-13 10:38:20.728 +05:30 [INF] [3ef8f999-cd04-42bd-a747-edd77f4fd97e] PDF review starting | files=1 | promptLen=1481
+2026-05-13 10:38:23.435 +05:30 [INF] [3ef8f999-cd04-42bd-a747-edd77f4fd97e] Uploaded file Bharatiyam-Foods-&-Beverages-Reanalysis Report.pdf (399820 bytes, application/pdf) → file_011CayzLvLPo48fq71Ehojhv
+2026-05-13 10:38:23.435 +05:30 [INF] [474a804e-1577-4e57-86f1-00430fb879eb] Uploaded file Bharatiyam-Foods-&-Beverages-Reanalysis Report.pdf (399820 bytes, application/pdf) → file_011CayzLvWJokyRV2T2A9aos
+2026-05-13 10:38:31.777 +05:30 [INF] [3ef8f999-cd04-42bd-a747-edd77f4fd97e] ← Claude claude-sonnet-4-6 | in=26676 out=263 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-13 10:38:31.789 +05:30 [INF] [3ef8f999-cd04-42bd-a747-edd77f4fd97e] PDF review completed | model=claude-sonnet-4-6 | tokens=26939
+2026-05-13 10:38:32.652 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 11933.273 ms
+2026-05-13 10:39:20.468 +05:30 [INF] [474a804e-1577-4e57-86f1-00430fb879eb] ← Claude claude-sonnet-4-6 | in=3 out=2774 tokens | cache_write=28746 cache_read=0 | stop=end_turn
+2026-05-13 10:39:20.483 +05:30 [INF] [474a804e-1577-4e57-86f1-00430fb879eb] PDF review completed | model=claude-sonnet-4-6 | tokens=2777
+2026-05-13 10:39:20.497 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 59777.860 ms
+2026-05-13 10:46:05.190 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.140 ms
+2026-05-13 10:46:05.208 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.123 ms
+2026-05-13 10:46:05.215 +05:30 [INF] [22188311-dd5d-4753-bd42-83e8a3b65f8c] POST /api/pdf-review/process files=1
+2026-05-13 10:46:05.216 +05:30 [INF] [22188311-dd5d-4753-bd42-83e8a3b65f8c] PDF review starting | files=1 | promptLen=8824
+2026-05-13 10:46:05.218 +05:30 [INF] [cc35f777-f5ce-41c4-9eed-e6671f4deb0a] POST /api/pdf-review/process files=1
+2026-05-13 10:46:05.220 +05:30 [INF] [cc35f777-f5ce-41c4-9eed-e6671f4deb0a] PDF review starting | files=1 | promptLen=1481
+2026-05-13 10:46:06.766 +05:30 [INF] [cc35f777-f5ce-41c4-9eed-e6671f4deb0a] Uploaded file Bharatiyam-Foods-&-Beverages-Reanalysis Report.pdf (399820 bytes, application/pdf) → file_011Cayzw5bSyi5UwEQYTk6Py
+2026-05-13 10:46:06.813 +05:30 [INF] [22188311-dd5d-4753-bd42-83e8a3b65f8c] Uploaded file Bharatiyam-Foods-&-Beverages-Reanalysis Report.pdf (399820 bytes, application/pdf) → file_011Cayzw5ncBmjdA479mh1hG
+2026-05-13 10:46:15.945 +05:30 [INF] [cc35f777-f5ce-41c4-9eed-e6671f4deb0a] ← Claude claude-sonnet-4-6 | in=26676 out=263 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-13 10:46:15.961 +05:30 [INF] [cc35f777-f5ce-41c4-9eed-e6671f4deb0a] PDF review completed | model=claude-sonnet-4-6 | tokens=26939
+2026-05-13 10:46:16.878 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 11664.170 ms
+2026-05-13 10:47:32.657 +05:30 [INF] [22188311-dd5d-4753-bd42-83e8a3b65f8c] ← Claude claude-sonnet-4-6 | in=28749 out=3046 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-13 10:47:32.673 +05:30 [INF] [22188311-dd5d-4753-bd42-83e8a3b65f8c] PDF review completed | model=claude-sonnet-4-6 | tokens=31795
+2026-05-13 10:47:32.681 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 87471.256 ms
+2026-05-13 10:56:01.318 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.205 ms
+2026-05-13 10:56:01.319 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.133 ms
+2026-05-13 10:56:01.364 +05:30 [INF] [9b9f8411-7b16-4f21-8e27-ef026613b35e] POST /api/pdf-review/process files=1
+2026-05-13 10:56:01.364 +05:30 [INF] [c3559a08-e3e9-486d-ad95-55601073cf78] POST /api/pdf-review/process files=1
+2026-05-13 10:56:01.368 +05:30 [INF] [9b9f8411-7b16-4f21-8e27-ef026613b35e] PDF review starting | files=1 | promptLen=8824
+2026-05-13 10:56:01.374 +05:30 [INF] [c3559a08-e3e9-486d-ad95-55601073cf78] PDF review starting | files=1 | promptLen=1481
+2026-05-13 10:56:02.904 +05:30 [INF] [9b9f8411-7b16-4f21-8e27-ef026613b35e] Uploaded file Bharatiyam-Foods-&-Beverages-Reanalysis Report.pdf (399820 bytes, application/pdf) → file_011Caz1h2SgLpSLXJ39er3X9
+2026-05-13 10:56:03.299 +05:30 [INF] [c3559a08-e3e9-486d-ad95-55601073cf78] Uploaded file Bharatiyam-Foods-&-Beverages-Reanalysis Report.pdf (399820 bytes, application/pdf) → file_011Caz1h3pmgmpp7sqzPDJ8W
+2026-05-13 10:56:11.130 +05:30 [INF] [c3559a08-e3e9-486d-ad95-55601073cf78] ← Claude claude-sonnet-4-6 | in=26676 out=263 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-13 10:56:11.135 +05:30 [INF] [c3559a08-e3e9-486d-ad95-55601073cf78] PDF review completed | model=claude-sonnet-4-6 | tokens=26939
+2026-05-13 10:56:11.943 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 10584.345 ms
+2026-05-13 10:57:03.878 +05:30 [INF] [9b9f8411-7b16-4f21-8e27-ef026613b35e] ← Claude claude-sonnet-4-6 | in=28749 out=2964 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-13 10:57:03.898 +05:30 [INF] [9b9f8411-7b16-4f21-8e27-ef026613b35e] PDF review completed | model=claude-sonnet-4-6 | tokens=31713
+2026-05-13 10:57:03.900 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 62541.827 ms
+2026-05-13 11:17:24.157 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.253 ms
+2026-05-13 11:17:24.157 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.064 ms
+2026-05-13 11:17:24.231 +05:30 [INF] [afc32e6b-d2a2-49b4-82c0-02cea233ffe2] POST /api/pdf-review/process files=1
+2026-05-13 11:17:24.231 +05:30 [INF] [ef04f8aa-93a8-43ee-acc9-13eb80deff60] POST /api/pdf-review/process files=1
+2026-05-13 11:17:24.233 +05:30 [INF] [afc32e6b-d2a2-49b4-82c0-02cea233ffe2] PDF review starting | files=1 | promptLen=8824
+2026-05-13 11:17:24.234 +05:30 [INF] [ef04f8aa-93a8-43ee-acc9-13eb80deff60] PDF review starting | files=1 | promptLen=1481
+2026-05-13 11:17:25.765 +05:30 [INF] [ef04f8aa-93a8-43ee-acc9-13eb80deff60] Uploaded file Bharatiyam-Foods-&-Beverages-Reanalysis Report.pdf (399820 bytes, application/pdf) → file_011Caz3KbFkDbLBV3tCQsUkJ
+2026-05-13 11:17:25.833 +05:30 [INF] [afc32e6b-d2a2-49b4-82c0-02cea233ffe2] Uploaded file Bharatiyam-Foods-&-Beverages-Reanalysis Report.pdf (399820 bytes, application/pdf) → file_011Caz3KbZrS3ypjt9ug6uan
+2026-05-13 11:17:34.026 +05:30 [INF] [ef04f8aa-93a8-43ee-acc9-13eb80deff60] ← Claude claude-sonnet-4-6 | in=26676 out=263 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-13 11:17:34.038 +05:30 [INF] [ef04f8aa-93a8-43ee-acc9-13eb80deff60] PDF review completed | model=claude-sonnet-4-6 | tokens=26939
+2026-05-13 11:17:34.865 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 10644.548 ms
+2026-05-13 11:18:22.606 +05:30 [INF] [afc32e6b-d2a2-49b4-82c0-02cea233ffe2] ← Claude claude-sonnet-4-6 | in=28749 out=2843 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-13 11:18:22.611 +05:30 [INF] [afc32e6b-d2a2-49b4-82c0-02cea233ffe2] PDF review completed | model=claude-sonnet-4-6 | tokens=31592
+2026-05-13 11:18:22.617 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 58396.684 ms
+2026-05-13 11:49:34.187 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 8.898 ms
+2026-05-13 11:49:34.187 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 7.330 ms
+2026-05-13 11:49:34.229 +05:30 [INF] [b16052a0-abeb-4e65-951c-d00f970d3170] POST /api/pdf-review/process files=1
+2026-05-13 11:49:34.229 +05:30 [INF] [da2027be-ddb3-4863-8434-9aaf62886b4a] POST /api/pdf-review/process files=1
+2026-05-13 11:49:34.232 +05:30 [INF] [b16052a0-abeb-4e65-951c-d00f970d3170] PDF review starting | files=1 | promptLen=8824
+2026-05-13 11:49:34.233 +05:30 [INF] [da2027be-ddb3-4863-8434-9aaf62886b4a] PDF review starting | files=1 | promptLen=1481
+2026-05-13 11:49:35.981 +05:30 [INF] [b16052a0-abeb-4e65-951c-d00f970d3170] Uploaded file Bharatiyam-Foods-&-Beverages-Reanalysis Report.pdf (399820 bytes, application/pdf) → file_011Caz5msYErEh8J7S9qQuPh
+2026-05-13 11:49:36.045 +05:30 [INF] [da2027be-ddb3-4863-8434-9aaf62886b4a] Uploaded file Bharatiyam-Foods-&-Beverages-Reanalysis Report.pdf (399820 bytes, application/pdf) → file_011Caz5msqbiAeVHb3Mh1ZJX
+2026-05-13 11:49:43.858 +05:30 [INF] [da2027be-ddb3-4863-8434-9aaf62886b4a] ← Claude claude-sonnet-4-6 | in=3 out=267 tokens | cache_write=26673 cache_read=0 | stop=end_turn
+2026-05-13 11:49:43.867 +05:30 [INF] [da2027be-ddb3-4863-8434-9aaf62886b4a] PDF review completed | model=claude-sonnet-4-6 | tokens=270
+2026-05-13 11:49:44.766 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 10541.790 ms
+2026-05-13 11:50:36.709 +05:30 [INF] [b16052a0-abeb-4e65-951c-d00f970d3170] ← Claude claude-sonnet-4-6 | in=28749 out=3017 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-13 11:50:36.713 +05:30 [INF] [b16052a0-abeb-4e65-951c-d00f970d3170] PDF review completed | model=claude-sonnet-4-6 | tokens=31766
+2026-05-13 11:50:36.715 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 62490.775 ms
+2026-05-13 11:52:08.999 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.174 ms
+2026-05-13 11:52:09.001 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.137 ms
+2026-05-13 11:52:09.052 +05:30 [INF] [21f4aca4-ebce-491a-b913-7c503d7e642d] POST /api/pdf-review/process files=1
+2026-05-13 11:52:09.052 +05:30 [INF] [7b7cbb6b-206d-4c7d-9c43-5edb0a63814f] POST /api/pdf-review/process files=1
+2026-05-13 11:52:09.057 +05:30 [INF] [21f4aca4-ebce-491a-b913-7c503d7e642d] PDF review starting | files=1 | promptLen=1481
+2026-05-13 11:52:09.059 +05:30 [INF] [7b7cbb6b-206d-4c7d-9c43-5edb0a63814f] PDF review starting | files=1 | promptLen=8824
+2026-05-13 11:52:10.524 +05:30 [INF] [7b7cbb6b-206d-4c7d-9c43-5edb0a63814f] Uploaded file Bharatiyam-Foods-&-Beverages-Reanalysis Report.pdf (399820 bytes, application/pdf) → file_011Caz5yG9qXoNauBSDr74QH
+2026-05-13 11:52:10.602 +05:30 [INF] [21f4aca4-ebce-491a-b913-7c503d7e642d] Uploaded file Bharatiyam-Foods-&-Beverages-Reanalysis Report.pdf (399820 bytes, application/pdf) → file_011Caz5yGBaP8dhcEpVRswGV
+2026-05-13 11:52:19.197 +05:30 [INF] [21f4aca4-ebce-491a-b913-7c503d7e642d] ← Claude claude-sonnet-4-6 | in=3 out=267 tokens | cache_write=443 cache_read=26230 | stop=end_turn
+2026-05-13 11:52:19.207 +05:30 [INF] [21f4aca4-ebce-491a-b913-7c503d7e642d] PDF review completed | model=claude-sonnet-4-6 | tokens=270
+2026-05-13 11:52:20.071 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 11037.062 ms
+2026-05-13 11:53:03.432 +05:30 [INF] [7b7cbb6b-206d-4c7d-9c43-5edb0a63814f] ← Claude claude-sonnet-4-6 | in=3 out=2924 tokens | cache_write=2516 cache_read=26230 | stop=end_turn
+2026-05-13 11:53:03.435 +05:30 [INF] [7b7cbb6b-206d-4c7d-9c43-5edb0a63814f] PDF review completed | model=claude-sonnet-4-6 | tokens=2927
+2026-05-13 11:53:03.439 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 54404.874 ms
+2026-05-13 11:56:56.826 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.132 ms
+2026-05-13 11:56:56.827 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.097 ms
+2026-05-13 11:56:56.894 +05:30 [INF] [53233eac-3568-4fe5-8e1f-ff313f7990f0] POST /api/pdf-review/process files=1
+2026-05-13 11:56:56.894 +05:30 [INF] [463a12e9-a4b6-49ab-8439-06a8d23598ed] POST /api/pdf-review/process files=1
+2026-05-13 11:56:56.897 +05:30 [INF] [53233eac-3568-4fe5-8e1f-ff313f7990f0] PDF review starting | files=1 | promptLen=8824
+2026-05-13 11:56:56.903 +05:30 [INF] [463a12e9-a4b6-49ab-8439-06a8d23598ed] PDF review starting | files=1 | promptLen=1481
+2026-05-13 11:56:59.734 +05:30 [INF] [53233eac-3568-4fe5-8e1f-ff313f7990f0] Uploaded file Bharatiyam-Foods-&-Beverages-Reanalysis Report.pdf (399820 bytes, application/pdf) → file_011Caz6LaiPaE4vpZwya5uvk
+2026-05-13 11:57:00.528 +05:30 [INF] [463a12e9-a4b6-49ab-8439-06a8d23598ed] Uploaded file Bharatiyam-Foods-&-Beverages-Reanalysis Report.pdf (399820 bytes, application/pdf) → file_011Caz6Le53Ny1DqmDEwh86x
+2026-05-13 11:57:08.939 +05:30 [INF] [463a12e9-a4b6-49ab-8439-06a8d23598ed] ← Claude claude-sonnet-4-6 | in=3 out=263 tokens | cache_write=443 cache_read=26230 | stop=end_turn
+2026-05-13 11:57:08.943 +05:30 [INF] [463a12e9-a4b6-49ab-8439-06a8d23598ed] PDF review completed | model=claude-sonnet-4-6 | tokens=266
+2026-05-13 11:57:09.748 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 12867.635 ms
+2026-05-13 11:57:55.555 +05:30 [INF] [53233eac-3568-4fe5-8e1f-ff313f7990f0] ← Claude claude-sonnet-4-6 | in=3 out=3035 tokens | cache_write=2516 cache_read=26230 | stop=end_turn
+2026-05-13 11:57:55.559 +05:30 [INF] [53233eac-3568-4fe5-8e1f-ff313f7990f0] PDF review completed | model=claude-sonnet-4-6 | tokens=3038
+2026-05-13 11:57:55.566 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 58686.308 ms
+2026-05-13 12:09:09.241 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.347 ms
+2026-05-13 12:09:09.243 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.164 ms
+2026-05-13 12:09:09.300 +05:30 [INF] [a3c35613-56d3-411b-b8da-83afeafc581e] POST /api/pdf-review/process files=1
+2026-05-13 12:09:09.300 +05:30 [INF] [f9b8f9b8-ff39-4abe-9c24-8f4537df29cf] POST /api/pdf-review/process files=1
+2026-05-13 12:09:09.303 +05:30 [INF] [a3c35613-56d3-411b-b8da-83afeafc581e] PDF review starting | files=1 | promptLen=1481
+2026-05-13 12:09:09.305 +05:30 [INF] [f9b8f9b8-ff39-4abe-9c24-8f4537df29cf] PDF review starting | files=1 | promptLen=8824
+2026-05-13 12:09:12.670 +05:30 [INF] [f9b8f9b8-ff39-4abe-9c24-8f4537df29cf] Uploaded file Bharatiyam-Foods-&-Beverages-Reanalysis Report.pdf (399820 bytes, application/pdf) → file_011Caz7GcQbP51U6tqWpzmZ3
+2026-05-13 12:09:12.758 +05:30 [INF] [a3c35613-56d3-411b-b8da-83afeafc581e] Uploaded file Bharatiyam-Foods-&-Beverages-Reanalysis Report.pdf (399820 bytes, application/pdf) → file_011Caz7GczZmjHWHjnqEZYjq
+2026-05-13 12:09:20.594 +05:30 [INF] [a3c35613-56d3-411b-b8da-83afeafc581e] ← Claude claude-sonnet-4-6 | in=26676 out=224 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-13 12:09:20.609 +05:30 [INF] [a3c35613-56d3-411b-b8da-83afeafc581e] PDF review completed | model=claude-sonnet-4-6 | tokens=26900
+2026-05-13 12:09:21.330 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 12047.759 ms
+2026-05-13 12:10:01.100 +05:30 [INF] [f9b8f9b8-ff39-4abe-9c24-8f4537df29cf] ← Claude claude-sonnet-4-6 | in=28749 out=2785 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-13 12:10:01.113 +05:30 [INF] [f9b8f9b8-ff39-4abe-9c24-8f4537df29cf] PDF review completed | model=claude-sonnet-4-6 | tokens=31534
+2026-05-13 12:10:01.127 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 51844.305 ms
+2026-05-13 12:41:35.275 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.205 ms
+2026-05-13 12:41:35.307 +05:30 [INF] [5e72650c-20d2-4627-9ec7-74990bea6b9a] POST /api/pdf-review/process files=1
+2026-05-13 12:41:35.310 +05:30 [INF] [5e72650c-20d2-4627-9ec7-74990bea6b9a] PDF review starting | files=1 | promptLen=10359
+2026-05-13 12:41:41.046 +05:30 [INF] [5e72650c-20d2-4627-9ec7-74990bea6b9a] Uploaded file FDS-GOV-251003022.pdf (517441 bytes, application/pdf) → file_011Caz9kEagk6gg6jLM2oWEE
+2026-05-13 12:42:38.867 +05:30 [INF] [5e72650c-20d2-4627-9ec7-74990bea6b9a] ← Claude claude-sonnet-4-6 | in=15811 out=2931 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-13 12:42:38.885 +05:30 [INF] [5e72650c-20d2-4627-9ec7-74990bea6b9a] PDF review completed | model=claude-sonnet-4-6 | tokens=18742
+2026-05-13 12:42:40.227 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 64925.696 ms
+2026-05-13 12:47:33.223 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.114 ms
+2026-05-13 12:47:33.275 +05:30 [INF] [50ba3670-2c37-419b-a9b9-b9f40e5caab6] POST /api/pdf-review/process files=2
+2026-05-13 12:47:33.277 +05:30 [INF] [50ba3670-2c37-419b-a9b9-b9f40e5caab6] PDF review starting | files=2 | promptLen=10359
+2026-05-13 12:47:35.522 +05:30 [INF] [50ba3670-2c37-419b-a9b9-b9f40e5caab6] Uploaded file Orissa-State-Ware-Housing-Corporation-Mar-2026-Report-No-260319008.pdf (338554 bytes, application/pdf) → file_011CazACMb5y2FPfUwTJzKrF
+2026-05-13 12:47:37.308 +05:30 [INF] [50ba3670-2c37-419b-a9b9-b9f40e5caab6] Uploaded file Superior-Polymers-India-Pvt.-Ltd.-Apr-2026-Report-No-260418020.pdf (322390 bytes, application/pdf) → file_011CazACVvPaNhGASiMKPcU4
+2026-05-13 12:48:39.829 +05:30 [INF] [50ba3670-2c37-419b-a9b9-b9f40e5caab6] ← Claude claude-sonnet-4-6 | in=16472 out=4096 tokens | cache_write=0 cache_read=0 | stop=max_tokens
+2026-05-13 12:48:39.847 +05:30 [INF] [50ba3670-2c37-419b-a9b9-b9f40e5caab6] PDF review completed | model=claude-sonnet-4-6 | tokens=20568
+2026-05-13 12:48:41.814 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 68565.306 ms
+2026-05-13 13:04:40.269 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.183 ms
+2026-05-13 13:04:40.343 +05:30 [INF] [6b96a063-5497-49dd-b4be-f8c4f3a6a3bd] POST /api/pdf-review/process files=2
+2026-05-13 13:04:40.347 +05:30 [INF] [6b96a063-5497-49dd-b4be-f8c4f3a6a3bd] PDF review starting | files=2 | promptLen=10359
+2026-05-13 13:04:42.939 +05:30 [INF] [6b96a063-5497-49dd-b4be-f8c4f3a6a3bd] Uploaded file Orissa-State-Ware-Housing-Corporation-Mar-2026-Report-No-260319008.pdf (338554 bytes, application/pdf) → file_011CazBW6xtCaRGnz5mDzJbK
+2026-05-13 13:04:44.619 +05:30 [INF] [6b96a063-5497-49dd-b4be-f8c4f3a6a3bd] Uploaded file Superior-Polymers-India-Pvt.-Ltd.-Apr-2026-Report-No-260418022.pdf (322142 bytes, application/pdf) → file_011CazBWE7zrYc1zMaddzVSG
+2026-05-13 13:05:50.883 +05:30 [INF] [6b96a063-5497-49dd-b4be-f8c4f3a6a3bd] ← Claude claude-sonnet-4-6 | in=16696 out=4096 tokens | cache_write=0 cache_read=0 | stop=max_tokens
+2026-05-13 13:05:50.890 +05:30 [INF] [6b96a063-5497-49dd-b4be-f8c4f3a6a3bd] PDF review completed | model=claude-sonnet-4-6 | tokens=20792
+2026-05-13 13:05:52.520 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 72224.406 ms
+2026-05-13 13:07:25.216 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.164 ms
+2026-05-13 13:07:25.252 +05:30 [INF] [4b3983ff-3ab4-4f6f-8990-5ae3463d4e53] POST /api/pdf-review/process files=1
+2026-05-13 13:07:25.257 +05:30 [INF] [4b3983ff-3ab4-4f6f-8990-5ae3463d4e53] PDF review starting | files=1 | promptLen=10359
+2026-05-13 13:07:27.958 +05:30 [INF] [4b3983ff-3ab4-4f6f-8990-5ae3463d4e53] Uploaded file Bharatiyam-Foods-&-Beverages-Reanalysis Report.pdf (399820 bytes, application/pdf) → file_011CazBiGRjaVVCJyd8Fui4d
+2026-05-13 13:08:18.503 +05:30 [INF] [4b3983ff-3ab4-4f6f-8990-5ae3463d4e53] ← Claude claude-sonnet-4-6 | in=29168 out=3329 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-13 13:08:18.517 +05:30 [INF] [4b3983ff-3ab4-4f6f-8990-5ae3463d4e53] PDF review completed | model=claude-sonnet-4-6 | tokens=32497
+2026-05-13 13:08:19.293 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 54044.619 ms
+2026-05-13 13:15:08.800 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.123 ms
+2026-05-13 13:15:08.830 +05:30 [INF] [ae5cb838-dabf-48fd-9ea4-d0db92edbb95] POST /api/pdf-review/process files=2
+2026-05-13 13:15:08.832 +05:30 [INF] [ae5cb838-dabf-48fd-9ea4-d0db92edbb95] PDF review starting | files=2 | promptLen=10362
+2026-05-13 13:15:11.844 +05:30 [INF] [ae5cb838-dabf-48fd-9ea4-d0db92edbb95] Uploaded file Orissa-State-Ware-Housing-Corporation-Mar-2026-Report-No-260319008.pdf (338554 bytes, application/pdf) → file_011CazCJTk5AnCy8P7JQQthZ
+2026-05-13 13:15:14.605 +05:30 [INF] [ae5cb838-dabf-48fd-9ea4-d0db92edbb95] Uploaded file Paras-Spices-Pvt.-Ltd.-Apr-2026-Report-No-260423002.pdf (417296 bytes, application/pdf) → file_011CazCJfbU58Sd9fzrpuqDN
+2026-05-13 13:16:14.851 +05:30 [INF] [ae5cb838-dabf-48fd-9ea4-d0db92edbb95] ← Claude claude-sonnet-4-6 | in=55422 out=4096 tokens | cache_write=0 cache_read=0 | stop=max_tokens
+2026-05-13 13:16:14.857 +05:30 [INF] [ae5cb838-dabf-48fd-9ea4-d0db92edbb95] PDF review completed | model=claude-sonnet-4-6 | tokens=59518
+2026-05-13 13:16:16.465 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 67640.993 ms
+2026-05-13 14:03:23.889 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.110 ms
+2026-05-13 14:03:24.037 +05:30 [INF] [c7b721fa-754c-4179-b5cc-f9e44b87e8e1] POST /api/pdf-review/process files=3
+2026-05-13 14:03:24.039 +05:30 [INF] [c7b721fa-754c-4179-b5cc-f9e44b87e8e1] PDF review starting | files=3 | promptLen=10362
+2026-05-13 14:04:06.256 +05:30 [ERR] [c7b721fa-754c-4179-b5cc-f9e44b87e8e1] Network error uploading file to Anthropic API
+System.Net.Http.HttpRequestException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. (api.anthropic.com:443)
+ ---> System.Net.Sockets.SocketException (10060): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AIWebservice.Services.ClaudeService.UploadFileAsync(Stream content, String fileName, String mimeType, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 153
+2026-05-13 14:04:06.315 +05:30 [ERR] HTTP POST /api/pdf-review/process responded 500 in 42312.873 ms
+AIWebservice.Models.AnthropicApiException: A network error occurred while uploading the file: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.UploadFileAsync(Stream content, String fileName, String mimeType, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 165
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 49
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 56
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-05-13 14:04:06.352 +05:30 [ERR] [c7b721fa-754c-4179-b5cc-f9e44b87e8e1] Unhandled AnthropicApiException: A network error occurred while uploading the file: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. (api.anthropic.com:443)
+AIWebservice.Models.AnthropicApiException: A network error occurred while uploading the file: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.UploadFileAsync(Stream content, String fileName, String mimeType, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 165
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 49
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 56
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\bikash\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-05-13 14:04:52.761 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.079 ms
+2026-05-13 14:04:52.829 +05:30 [INF] [a19ad9a9-eff6-4896-8d00-1f32c00ab9b0] POST /api/pdf-review/process files=3
+2026-05-13 14:04:52.836 +05:30 [INF] [a19ad9a9-eff6-4896-8d00-1f32c00ab9b0] PDF review starting | files=3 | promptLen=10362
+2026-05-13 14:05:34.916 +05:30 [ERR] [a19ad9a9-eff6-4896-8d00-1f32c00ab9b0] Network error uploading file to Anthropic API
+System.Net.Http.HttpRequestException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. (api.anthropic.com:443)
+ ---> System.Net.Sockets.SocketException (10060): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AIWebservice.Services.ClaudeService.UploadFileAsync(Stream content, String fileName, String mimeType, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 153
+2026-05-13 14:05:34.932 +05:30 [ERR] HTTP POST /api/pdf-review/process responded 500 in 42145.195 ms
+AIWebservice.Models.AnthropicApiException: A network error occurred while uploading the file: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.UploadFileAsync(Stream content, String fileName, String mimeType, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 165
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 49
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 56
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-05-13 14:05:34.940 +05:30 [ERR] [a19ad9a9-eff6-4896-8d00-1f32c00ab9b0] Unhandled AnthropicApiException: A network error occurred while uploading the file: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. (api.anthropic.com:443)
+AIWebservice.Models.AnthropicApiException: A network error occurred while uploading the file: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.UploadFileAsync(Stream content, String fileName, String mimeType, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 165
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 49
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 56
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\bikash\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-05-13 14:07:26.558 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.106 ms
+2026-05-13 14:07:26.606 +05:30 [INF] [fab6449b-10ce-4b82-8669-5a0d5eacc26c] POST /api/pdf-review/process files=2
+2026-05-13 14:07:26.607 +05:30 [INF] [fab6449b-10ce-4b82-8669-5a0d5eacc26c] PDF review starting | files=2 | promptLen=10362
+2026-05-13 14:07:28.588 +05:30 [INF] [fab6449b-10ce-4b82-8669-5a0d5eacc26c] Uploaded file Orissa-State-Ware-Housing-Corporation-Mar-2026-Report-No-260319008.pdf (338554 bytes, application/pdf) → file_011CazGHgXxQ34H55146uu6j
+2026-05-13 14:07:30.359 +05:30 [INF] [fab6449b-10ce-4b82-8669-5a0d5eacc26c] Uploaded file Paras-Spices-Pvt.-Ltd.-Apr-2026-Report-No-260423002.pdf (417296 bytes, application/pdf) → file_011CazGHpBpuGSRn5UENWzBn
+2026-05-13 14:08:36.880 +05:30 [INF] [fab6449b-10ce-4b82-8669-5a0d5eacc26c] ← Claude claude-sonnet-4-6 | in=55422 out=4096 tokens | cache_write=0 cache_read=0 | stop=max_tokens
+2026-05-13 14:08:36.889 +05:30 [INF] [fab6449b-10ce-4b82-8669-5a0d5eacc26c] PDF review completed | model=claude-sonnet-4-6 | tokens=59518
+2026-05-13 14:08:38.616 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 72016.271 ms
+2026-05-13 14:13:45.491 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.120 ms
+2026-05-13 14:13:45.588 +05:30 [INF] [c74302fc-abf4-4ede-85d5-ccbc3062e52f] POST /api/pdf-review/process files=3
+2026-05-13 14:13:45.590 +05:30 [INF] [c74302fc-abf4-4ede-85d5-ccbc3062e52f] PDF review starting | files=3 | promptLen=10362
+2026-05-13 14:13:55.907 +05:30 [INF] [c74302fc-abf4-4ede-85d5-ccbc3062e52f] Uploaded file AMVR_AMITRIPTYLINE_RPT_DR_2024_043_00_20_11_2024_Validation_Final.pdf (3255801 bytes, application/pdf) → file_011CazGnERsduwN4owVxuJ4v
+2026-05-13 14:13:57.543 +05:30 [INF] [c74302fc-abf4-4ede-85d5-ccbc3062e52f] Uploaded file FDS-GOV-251003022.pdf (517441 bytes, application/pdf) → file_011CazGnMZ1dmtURevK1BAF5
+2026-05-13 14:13:59.147 +05:30 [INF] [c74302fc-abf4-4ede-85d5-ccbc3062e52f] Uploaded file Orissa-State-Ware-Housing-Corporation-Mar-2026-Report-No-260319008.pdf (338554 bytes, application/pdf) → file_011CazGnUbRAvu8pJP6yszLi
+2026-05-13 14:15:20.632 +05:30 [INF] [c74302fc-abf4-4ede-85d5-ccbc3062e52f] ← Claude claude-sonnet-4-6 | in=93705 out=4096 tokens | cache_write=0 cache_read=0 | stop=max_tokens
+2026-05-13 14:15:20.636 +05:30 [INF] [c74302fc-abf4-4ede-85d5-ccbc3062e52f] PDF review completed | model=claude-sonnet-4-6 | tokens=97801
+2026-05-13 14:15:22.986 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 97430.188 ms
+2026-05-13 16:02:29.843 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.631 ms
+2026-05-13 16:02:29.868 +05:30 [INF] [e558036f-345e-49b0-9521-e8523c56b72b] POST /api/pdf-review/process files=1
+2026-05-13 16:02:29.873 +05:30 [INF] [e558036f-345e-49b0-9521-e8523c56b72b] PDF review starting | files=1 | promptLen=10362
+2026-05-13 16:02:31.326 +05:30 [INF] [e558036f-345e-49b0-9521-e8523c56b72b] Uploaded file Superior-Polymers-India-Pvt.-Ltd.-Apr-2026-Report-No-260418020.pdf (322390 bytes, application/pdf) → file_011CazR4Wry7whnRvTPZK1nU
+2026-05-13 16:03:22.517 +05:30 [INF] [e558036f-345e-49b0-9521-e8523c56b72b] ← Claude claude-sonnet-4-6 | in=7795 out=2937 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-13 16:03:22.528 +05:30 [INF] [e558036f-345e-49b0-9521-e8523c56b72b] PDF review completed | model=claude-sonnet-4-6 | tokens=10732
+2026-05-13 16:03:23.611 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 53751.830 ms

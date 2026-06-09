@@ -1,0 +1,105 @@
+2026-05-11 11:27:05.150 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.193 ms
+2026-05-11 11:27:05.205 +05:30 [INF] [b89db574-192b-4498-b382-f29580f28fe6] POST /api/pdf-review/process files=1
+2026-05-11 11:27:05.211 +05:30 [INF] [b89db574-192b-4498-b382-f29580f28fe6] PDF review starting | files=1 | promptLen=7114
+2026-05-11 11:27:06.702 +05:30 [INF] [b89db574-192b-4498-b382-f29580f28fe6] Uploaded file Paras-Spices-Pvt.-Ltd.-Apr-2026-Report-No-260423002.pdf (417296 bytes, application/pdf) → file_011CavGSW4Q1xDnQEayCQiSG
+2026-05-11 11:27:48.572 +05:30 [INF] [b89db574-192b-4498-b382-f29580f28fe6] ← Claude claude-sonnet-4-6 | in=45832 out=2043 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-11 11:27:48.594 +05:30 [INF] [b89db574-192b-4498-b382-f29580f28fe6] PDF review completed | model=claude-sonnet-4-6 | tokens=47875
+2026-05-11 11:27:49.403 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 44223.985 ms
+2026-05-11 11:56:07.164 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.165 ms
+2026-05-11 11:56:07.216 +05:30 [INF] [f65574df-0323-4f3b-8a00-983dc9dc39dd] POST /api/pdf-review/process files=2
+2026-05-11 11:56:07.219 +05:30 [INF] [f65574df-0323-4f3b-8a00-983dc9dc39dd] PDF review starting | files=2 | promptLen=7114
+2026-05-11 11:56:08.734 +05:30 [INF] [f65574df-0323-4f3b-8a00-983dc9dc39dd] Uploaded file FDS-GOV-251003022.pdf (517441 bytes, application/pdf) → file_011CavJeuhGba2atAjK4ejEM
+2026-05-11 11:56:10.538 +05:30 [INF] [f65574df-0323-4f3b-8a00-983dc9dc39dd] Uploaded file Orissa-State-Ware-Housing-Corporation-Mar-2026-Report-No-260319008.pdf (338554 bytes, application/pdf) → file_011CavJf3a3PkXE5kRQoBbuc
+2026-05-11 11:57:06.490 +05:30 [INF] [f65574df-0323-4f3b-8a00-983dc9dc39dd] ← Claude claude-sonnet-4-6 | in=23548 out=3165 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-11 11:57:06.509 +05:30 [INF] [f65574df-0323-4f3b-8a00-983dc9dc39dd] PDF review completed | model=claude-sonnet-4-6 | tokens=26713
+2026-05-11 11:57:08.115 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 60913.129 ms
+2026-05-11 12:00:45.863 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 0.205 ms
+2026-05-11 12:00:45.901 +05:30 [INF] [b3049f69-56b4-49af-8971-f02cea18e01f] POST /api/pdf-review/process files=1
+2026-05-11 12:00:45.903 +05:30 [INF] [b3049f69-56b4-49af-8971-f02cea18e01f] PDF review starting | files=1 | promptLen=7114
+2026-05-11 12:00:47.971 +05:30 [ERR] HTTP POST /api/pdf-review/process responded 500 in 2076.216 ms
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AIWebservice.Services.ClaudeService.UploadFileAsync(Stream content, String fileName, String mimeType, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 153
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 49
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 56
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-05-11 12:00:47.987 +05:30 [ERR] [b3049f69-56b4-49af-8971-f02cea18e01f] Unhandled TaskCanceledException: A task was canceled.
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AIWebservice.Services.ClaudeService.UploadFileAsync(Stream content, String fileName, String mimeType, String correlationId, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\ClaudeService.cs:line 153
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 49
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 56
+   at AIWebservice.Services.PdfReviewService.ReviewAsync(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Services\PdfReviewService.cs:line 116
+   at AIWebservice.Controllers.PdfReviewController.PdfReviewController.Process(PdfReviewRequest request, CancellationToken ct) in C:\bikash\.net webservices\AIWebservice\Controllers\PdfReviewController\PdfReviewController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\bikash\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-05-11 12:26:39.675 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 1.943 ms
+2026-05-11 12:26:39.763 +05:30 [INF] [50cc2a9d-fbc9-40e0-9e59-972a82deff61] POST /api/pdf-review/process files=3
+2026-05-11 12:26:39.771 +05:30 [INF] [50cc2a9d-fbc9-40e0-9e59-972a82deff61] PDF review starting | files=3 | promptLen=7114
+2026-05-11 12:26:41.223 +05:30 [INF] [50cc2a9d-fbc9-40e0-9e59-972a82deff61] Uploaded file Paras-Spices-Pvt.-Ltd.-Apr-2026-Report-No-260423002.pdf (417296 bytes, application/pdf) → file_011CavLyzcDHzW2hGJjuKCo1
+2026-05-11 12:26:43.273 +05:30 [INF] [50cc2a9d-fbc9-40e0-9e59-972a82deff61] Uploaded file Big-Carbonics-Pvt.-Ltd.-Mar-2026-Report-No-260331001.pdf (335804 bytes, application/pdf) → file_011CavLz8FM7kKv6KePMgJVN
+2026-05-11 12:26:44.953 +05:30 [INF] [50cc2a9d-fbc9-40e0-9e59-972a82deff61] Uploaded file KL-Beverages-Apr-2026-Report-No-260420001.pdf (402226 bytes, application/pdf) → file_011CavLzG6dMK1GZ8CxPZiSt
+2026-05-11 12:28:37.217 +05:30 [INF] [50cc2a9d-fbc9-40e0-9e59-972a82deff61] ← Claude claude-sonnet-4-6 | in=85909 out=5738 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-11 12:28:37.232 +05:30 [INF] [50cc2a9d-fbc9-40e0-9e59-972a82deff61] PDF review completed | model=claude-sonnet-4-6 | tokens=91647
+2026-05-11 12:28:40.281 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 120565.633 ms
+2026-05-11 17:47:07.833 +05:30 [INF] HTTP POST /api/pdf-review/process responded 307 in 1.829 ms
+2026-05-11 17:47:07.892 +05:30 [INF] [71233eba-0773-48b0-9aa3-40626fc4d9fe] POST /api/pdf-review/process files=1
+2026-05-11 17:47:07.898 +05:30 [INF] [71233eba-0773-48b0-9aa3-40626fc4d9fe] PDF review starting | files=1 | promptLen=7114
+2026-05-11 17:47:09.286 +05:30 [INF] [71233eba-0773-48b0-9aa3-40626fc4d9fe] Uploaded file Superior-Polymers-India-Pvt.-Ltd.-Apr-2026-Report-No-260418020.pdf (322390 bytes, application/pdf) → file_011CavmRUUznmz8vpwsE6A3S
+2026-05-11 17:47:40.456 +05:30 [INF] [71233eba-0773-48b0-9aa3-40626fc4d9fe] ← Claude claude-sonnet-4-6 | in=6873 out=1719 tokens | cache_write=0 cache_read=0 | stop=end_turn
+2026-05-11 17:47:40.467 +05:30 [INF] [71233eba-0773-48b0-9aa3-40626fc4d9fe] PDF review completed | model=claude-sonnet-4-6 | tokens=8592
+2026-05-11 17:47:41.342 +05:30 [INF] HTTP POST /api/pdf-review/process responded 200 in 33494.732 ms

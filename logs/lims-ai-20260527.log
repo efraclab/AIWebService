@@ -1,0 +1,108 @@
+2026-05-27 14:40:19.746 [INF] Starting LIMS AI Middleware...
+2026-05-27 14:40:20.593 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-05-27 14:56:53.762 +05:30 [INF] GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 14:56:53.771 +05:30 [INF] CoA approval fetch regNo=EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 14:56:54.875 +05:30 [INF] HTTP GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022 responded 404 in 1256.253 ms
+2026-05-27 14:56:54.884 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 2.414 ms
+2026-05-27 14:56:54.943 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/GOV/251003022
+2026-05-27 14:56:54.953 +05:30 [INF] [88f441ed-7f9e-479a-94c1-f3c679f2ab78] CoA fetch+review regNo=EFRAC/FDS/GOV/251003022
+2026-05-27 14:57:58.672 +05:30 [INF] [88f441ed-7f9e-479a-94c1-f3c679f2ab78] ← Claude claude-sonnet-4-6 | in=6588 out=4096 tokens | cache_write=1750 cache_read=0 | stop=max_tokens
+2026-05-27 14:57:58.682 +05:30 [INF] [88f441ed-7f9e-479a-94c1-f3c679f2ab78] CoA review completed | rows=13 | model=claude-sonnet-4-6 | tokens=10684
+2026-05-27 14:57:58.711 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 63818.293 ms
+2026-05-27 14:57:58.810 +05:30 [INF] GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 14:57:58.815 +05:30 [INF] CoA approval fetch regNo=EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 14:57:58.831 +05:30 [INF] HTTP GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022 responded 404 in 26.106 ms
+2026-05-27 14:57:58.833 +05:30 [INF] GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 14:57:58.834 +05:30 [INF] CoA approval fetch regNo=EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 14:57:58.845 +05:30 [INF] HTTP GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022 responded 404 in 11.863 ms
+2026-05-27 15:13:54.311 +05:30 [INF] HTTP OPTIONS /api/find/update responded 204 in 0.201 ms
+2026-05-27 15:13:54.341 +05:30 [INF] PUT /api/find/update regNo=EFRAC/FDS/GOV/251003022 | headerProvided=false | items=1
+2026-05-27 15:13:54.345 +05:30 [INF] CoA update regNo=EFRAC/FDS/GOV/251003022 | headerProvided=false | detailItems=1 | changedBy=Reviewer
+2026-05-27 15:13:54.578 +05:30 [INF] CoA update regNo=EFRAC/FDS/GOV/251003022 complete | headerRows=0 | detailRows=0 | skipped=1
+2026-05-27 15:13:54.591 +05:30 [INF] HTTP PUT /api/find/update responded 200 in 275.313 ms
+2026-05-27 15:17:19.998 +05:30 [INF] HTTP OPTIONS /api/find/update responded 204 in 0.178 ms
+2026-05-27 15:17:20.005 +05:30 [INF] PUT /api/find/update regNo=EFRAC/FDS/GOV/251003022 | headerProvided=false | items=1
+2026-05-27 15:17:20.007 +05:30 [INF] CoA update regNo=EFRAC/FDS/GOV/251003022 | headerProvided=false | detailItems=1 | changedBy=Reviewer
+2026-05-27 15:17:20.024 +05:30 [INF] CoA update regNo=EFRAC/FDS/GOV/251003022 complete | headerRows=0 | detailRows=0 | skipped=1
+2026-05-27 15:17:20.026 +05:30 [INF] HTTP PUT /api/find/update responded 200 in 22.642 ms
+2026-05-27 15:17:53.740 +05:30 [INF] HTTP OPTIONS /api/find/update responded 204 in 0.116 ms
+2026-05-27 15:17:53.745 +05:30 [INF] PUT /api/find/update regNo=EFRAC/FDS/GOV/251003022 | headerProvided=false | items=1
+2026-05-27 15:17:53.747 +05:30 [INF] CoA update regNo=EFRAC/FDS/GOV/251003022 | headerProvided=false | detailItems=1 | changedBy=Reviewer
+2026-05-27 15:17:53.822 +05:30 [INF] CoA update regNo=EFRAC/FDS/GOV/251003022 complete | headerRows=0 | detailRows=0 | skipped=1
+2026-05-27 15:17:53.827 +05:30 [INF] HTTP PUT /api/find/update responded 200 in 81.998 ms
+2026-05-27 15:27:08.088 +05:30 [INF] GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 15:27:08.090 +05:30 [INF] CoA approval fetch regNo=EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 15:27:08.151 +05:30 [INF] HTTP GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022 responded 404 in 64.456 ms
+2026-05-27 15:27:08.156 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.138 ms
+2026-05-27 15:27:08.163 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/GOV/251003022
+2026-05-27 15:27:08.166 +05:30 [INF] [5d2afe5c-48b6-41cd-97b8-abf6f6637e56] CoA fetch+review regNo=EFRAC/FDS/GOV/251003022
+2026-05-27 15:28:10.820 +05:30 [INF] [5d2afe5c-48b6-41cd-97b8-abf6f6637e56] ← Claude claude-sonnet-4-6 | in=6588 out=4096 tokens | cache_write=1750 cache_read=0 | stop=max_tokens
+2026-05-27 15:28:10.823 +05:30 [INF] [5d2afe5c-48b6-41cd-97b8-abf6f6637e56] CoA review completed | rows=13 | model=claude-sonnet-4-6 | tokens=10684
+2026-05-27 15:28:10.826 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 62663.175 ms
+2026-05-27 15:28:10.875 +05:30 [INF] GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 15:28:10.876 +05:30 [INF] CoA approval fetch regNo=EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 15:28:10.894 +05:30 [INF] HTTP GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022 responded 404 in 19.338 ms
+2026-05-27 15:28:10.898 +05:30 [INF] GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 15:28:10.899 +05:30 [INF] CoA approval fetch regNo=EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 15:28:10.910 +05:30 [INF] HTTP GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022 responded 404 in 13.010 ms
+2026-05-27 15:30:51.983 +05:30 [INF] HTTP OPTIONS /api/find/update responded 204 in 0.127 ms
+2026-05-27 15:30:51.990 +05:30 [INF] PUT /api/find/update regNo=EFRAC/FDS/GOV/251003022 | headerProvided=false | items=1
+2026-05-27 15:30:51.991 +05:30 [INF] CoA update regNo=EFRAC/FDS/GOV/251003022 | headerProvided=false | detailItems=1 | changedBy=Reviewer
+2026-05-27 15:30:52.011 +05:30 [INF] CoA update regNo=EFRAC/FDS/GOV/251003022 complete | headerRows=0 | detailRows=0 | skipped=1
+2026-05-27 15:30:52.014 +05:30 [INF] HTTP PUT /api/find/update responded 200 in 25.973 ms
+2026-05-27 15:32:04.670 +05:30 [INF] HTTP OPTIONS /api/find/approval responded 204 in 0.154 ms
+2026-05-27 15:32:04.686 +05:30 [INF] POST /api/find/approval regNo=EFRAC/FDS/GOV/251003022 status=Approved
+2026-05-27 15:32:04.688 +05:30 [INF] CoA approval set regNo=EFRAC/FDS/GOV/251003022 | status=Approved | by=Reviewer
+2026-05-27 15:32:04.836 +05:30 [INF] CoA approval regNo=EFRAC/FDS/GOV/251003022 → Approved by Reviewer
+2026-05-27 15:32:04.857 +05:30 [INF] HTTP POST /api/find/approval responded 200 in 183.394 ms
+2026-05-27 15:35:31.002 +05:30 [INF] HTTP OPTIONS /api/find/approval responded 204 in 0.165 ms
+2026-05-27 15:35:31.008 +05:30 [INF] POST /api/find/approval regNo=EFRAC/FDS/GOV/251003022 status=Approved
+2026-05-27 15:35:31.009 +05:30 [INF] CoA approval set regNo=EFRAC/FDS/GOV/251003022 | status=Approved | by=Reviewer
+2026-05-27 15:35:31.066 +05:30 [INF] CoA approval regNo=EFRAC/FDS/GOV/251003022 → Approved by Reviewer
+2026-05-27 15:35:31.069 +05:30 [INF] HTTP POST /api/find/approval responded 200 in 61.887 ms
+2026-05-27 15:36:33.296 +05:30 [INF] HTTP OPTIONS /api/find/update responded 204 in 0.130 ms
+2026-05-27 15:36:33.303 +05:30 [INF] PUT /api/find/update regNo=EFRAC/FDS/GOV/251003022 | headerProvided=false | items=1
+2026-05-27 15:36:33.305 +05:30 [INF] CoA update regNo=EFRAC/FDS/GOV/251003022 | headerProvided=false | detailItems=1 | changedBy=Reviewer
+2026-05-27 15:36:33.324 +05:30 [INF] CoA update regNo=EFRAC/FDS/GOV/251003022 complete | headerRows=0 | detailRows=0 | skipped=1
+2026-05-27 15:36:33.326 +05:30 [INF] HTTP PUT /api/find/update responded 200 in 24.365 ms
+2026-05-27 15:36:36.000 +05:30 [INF] HTTP GET /api/find/update responded 405 in 0.591 ms
+2026-05-27 16:23:35.279 +05:30 [INF] GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 16:23:35.281 +05:30 [INF] CoA approval fetch regNo=EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 16:23:35.327 +05:30 [INF] HTTP GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022 responded 404 in 49.406 ms
+2026-05-27 16:23:35.332 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.284 ms
+2026-05-27 16:23:35.337 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/GOV/251003022
+2026-05-27 16:23:35.338 +05:30 [INF] [9914e0fd-f4e3-4556-b9c0-18cb34c03bb1] CoA fetch+review regNo=EFRAC/FDS/GOV/251003022
+2026-05-27 16:24:38.044 +05:30 [INF] [9914e0fd-f4e3-4556-b9c0-18cb34c03bb1] ← Claude claude-sonnet-4-6 | in=6588 out=4096 tokens | cache_write=1744 cache_read=0 | stop=max_tokens
+2026-05-27 16:24:38.047 +05:30 [INF] [9914e0fd-f4e3-4556-b9c0-18cb34c03bb1] CoA review completed | rows=13 | model=claude-sonnet-4-6 | tokens=10684
+2026-05-27 16:24:38.050 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 62714.684 ms
+2026-05-27 16:24:38.151 +05:30 [INF] GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 16:24:38.152 +05:30 [INF] CoA approval fetch regNo=EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 16:24:38.164 +05:30 [INF] HTTP GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022 responded 404 in 13.784 ms
+2026-05-27 16:24:38.167 +05:30 [INF] GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 16:24:38.168 +05:30 [INF] CoA approval fetch regNo=EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 16:24:38.179 +05:30 [INF] HTTP GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022 responded 404 in 12.052 ms
+2026-05-27 16:31:09.681 +05:30 [INF] GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 16:31:09.682 +05:30 [INF] CoA approval fetch regNo=EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 16:31:09.780 +05:30 [INF] HTTP GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022 responded 404 in 101.157 ms
+2026-05-27 17:49:24.753 [INF] Starting LIMS AI Middleware...
+2026-05-27 17:49:24.979 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-05-27 17:51:43.460 +05:30 [INF] GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 17:51:43.470 +05:30 [INF] CoA approval fetch regNo=EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 17:51:43.973 +05:30 [INF] HTTP GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022 responded 404 in 624.199 ms
+2026-05-27 17:51:43.985 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 1.874 ms
+2026-05-27 17:51:44.028 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/GOV/251003022
+2026-05-27 17:51:44.047 +05:30 [INF] [432e0a44-426a-43f6-94c1-77e2cba33ff1] CoA fetch+review regNo=EFRAC/FDS/GOV/251003022
+2026-05-27 17:52:49.392 +05:30 [INF] [432e0a44-426a-43f6-94c1-77e2cba33ff1] ← Claude claude-sonnet-4-6 | in=6666 out=4096 tokens | cache_write=1923 cache_read=0 | stop=max_tokens
+2026-05-27 17:52:49.402 +05:30 [INF] [432e0a44-426a-43f6-94c1-77e2cba33ff1] CoA review completed | rows=13 | model=claude-sonnet-4-6 | tokens=10762
+2026-05-27 17:52:49.447 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 65455.522 ms
+2026-05-27 17:52:49.501 +05:30 [INF] GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 17:52:49.502 +05:30 [INF] CoA approval fetch regNo=EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 17:52:49.519 +05:30 [INF] HTTP GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022 responded 404 in 24.567 ms
+2026-05-27 17:52:49.522 +05:30 [INF] GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 17:52:49.523 +05:30 [INF] CoA approval fetch regNo=EFRAC%2FFDS%2FGOV%2F251003022
+2026-05-27 17:52:49.533 +05:30 [INF] HTTP GET /api/find/approval/EFRAC%2FFDS%2FGOV%2F251003022 responded 404 in 11.943 ms
+2026-05-27 17:53:30.730 +05:30 [INF] HTTP OPTIONS /api/find/update responded 204 in 0.218 ms
+2026-05-27 17:53:30.795 +05:30 [INF] PUT /api/find/update regNo=EFRAC/FDS/GOV/251003022 | headerProvided=false | items=1
+2026-05-27 17:53:30.800 +05:30 [INF] CoA update regNo=EFRAC/FDS/GOV/251003022 | headerProvided=false | detailItems=1 | changedBy=Reviewer
+2026-05-27 17:53:30.837 +05:30 [INF] CoA update regNo=EFRAC/FDS/GOV/251003022 complete | headerRows=0 | detailRows=0 | skipped=1
+2026-05-27 17:53:30.847 +05:30 [INF] HTTP PUT /api/find/update responded 200 in 111.206 ms
