@@ -1,7 +1,9 @@
+// file name: RegNoReviewService.cs
 using AIWebservice.Models;
 using AIWebservice.Models.coa;
 using AIWebservice.Repositories;
 using System.Text.Json;
+using AIWebservice.Configuration;
 
 namespace AIWebservice.Services
 {
@@ -86,6 +88,12 @@ namespace AIWebservice.Services
                 correlationId: correlationId,
                 ct: ct);
 
+            var estimatedCost = AnthropicPricing.Calculate(
+                usage.InputTokens,
+                usage.OutputTokens,
+                usage.CacheCreationInputTokens,
+                usage.CacheReadInputTokens);
+
             _logger.LogInformation(
                 "[{CorrelationId}] CoA review completed | rows={RowCount} | model={Model} | tokens={Total}",
                 correlationId, rows.Count, modelUsed, usage.InputTokens + usage.OutputTokens);
@@ -102,6 +110,9 @@ namespace AIWebservice.Services
                     InputTokens = usage.InputTokens,
                     OutputTokens = usage.OutputTokens,
                 },
+                EstimatedCostUsd = estimatedCost,
+                CacheWriteTokens = usage.CacheCreationInputTokens,
+                CacheReadTokens = usage.CacheReadInputTokens,
                 Model = modelUsed,
                 ProcessedAt = DateTimeOffset.UtcNow,
             };

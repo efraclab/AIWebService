@@ -1,5 +1,7 @@
+// file name: Program.cs
 using AIWebservice.Extensions;
 using AIWebservice.Middleware;
+using AIWebservice.Services;          // ← fixes "AnthropicBillingService could not be found"
 using Serilog;
 using Serilog.Events;
 
@@ -15,7 +17,6 @@ Log.Logger = new LoggerConfiguration()
         retainedFileCountLimit: 14,
         outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level:u3}] {Message:lj}{NewLine}{Exception}")
     .CreateBootstrapLogger();
-
 
 try
 {
@@ -37,6 +38,9 @@ try
                retainedFileCountLimit: 14));
 
     builder.Services.AddLimsServices(builder.Configuration);
+    // ↑ AnthropicBillingService is already registered inside AddLimsServices —
+    //   the duplicate builder.Services.AddHttpClient<AnthropicBillingService>()
+    //   that was here has been removed.
 
     builder.Services.AddCors(options =>
     {
@@ -53,7 +57,7 @@ try
     var app = builder.Build();
 
     app.UseMiddleware<GlobalExceptionMiddleware>();
-    
+
     app.UseSerilogRequestLogging(opts =>
     {
         opts.MessageTemplate =
@@ -66,7 +70,7 @@ try
         app.UseSwaggerUI(opts =>
         {
             opts.SwaggerEndpoint("/swagger/v1/swagger.json", "LIMS AI Middleware v1");
-            opts.RoutePrefix = string.Empty;   // Serve Swagger at root "/"
+            opts.RoutePrefix = string.Empty;
         });
     }
 

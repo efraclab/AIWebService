@@ -1,0 +1,302 @@
+2026-07-08 11:06:43.435 [INF] Starting LIMS AI Middleware...
+2026-07-08 11:06:43.801 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-07-08 12:00:33.887 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 12:00:33.895 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 12:00:34.615 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 892.672 ms
+2026-07-08 12:00:34.630 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 2.328 ms
+2026-07-08 12:00:34.700 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-08 12:00:34.702 +05:30 [INF] [cid-mrbp87lg-l9qmd8zj] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-08 12:01:39.475 +05:30 [INF] [cid-mrbp87lg-l9qmd8zj] ← Claude claude-sonnet-4-6 | in=19874 out=4096 tokens | cache_write=6858 cache_read=0 | stop=max_tokens
+2026-07-08 12:01:39.480 +05:30 [INF] [cid-mrbp87lg-l9qmd8zj] CoA review completed | rows=42 | model=claude-sonnet-4-6 | tokens=23970
+2026-07-08 12:01:39.533 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 64894.874 ms
+2026-07-08 12:01:39.719 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 12:01:39.720 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 12:01:39.730 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 18.682 ms
+2026-07-08 12:01:39.732 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 12:01:39.734 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 12:01:39.744 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 12.647 ms
+2026-07-08 12:34:20.900 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 12:34:20.902 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 12:34:20.946 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 47.184 ms
+2026-07-08 12:34:20.951 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.150 ms
+2026-07-08 12:34:20.956 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-08 12:34:20.957 +05:30 [INF] [cid-mrbqfn4l-4w9dflol] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-08 12:35:26.602 +05:30 [INF] [cid-mrbqfn4l-4w9dflol] ← Claude claude-sonnet-4-6 | in=19874 out=4096 tokens | cache_write=6858 cache_read=0 | stop=max_tokens
+2026-07-08 12:35:26.608 +05:30 [INF] [cid-mrbqfn4l-4w9dflol] CoA review completed | rows=42 | model=claude-sonnet-4-6 | tokens=23970
+2026-07-08 12:35:26.616 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 65661.611 ms
+2026-07-08 12:35:26.792 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 12:35:26.793 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 12:35:26.802 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 13.170 ms
+2026-07-08 12:35:26.804 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 12:35:26.806 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 12:35:26.818 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 14.130 ms
+2026-07-08 12:58:01.064 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 12:58:01.065 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 12:58:01.102 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 39.434 ms
+2026-07-08 12:58:01.107 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.135 ms
+2026-07-08 12:58:01.113 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-08 12:58:01.114 +05:30 [INF] [cid-mrbra2xc-8nuldtxf] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-08 12:58:09.880 +05:30 [ERR] HTTP POST /api/find/fetch-review responded 500 in 8768.585 ms
+System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: The I/O operation has been aborted because of either a thread exit or an application request..
+ ---> System.Net.Sockets.SocketException (995): The I/O operation has been aborted because of either a thread exit or an application request.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 250
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-08 12:58:09.932 +05:30 [ERR] [0HNMSN9L28H47:00000003] Unhandled TaskCanceledException: The operation was canceled.
+System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: The I/O operation has been aborted because of either a thread exit or an application request..
+ ---> System.Net.Sockets.SocketException (995): The I/O operation has been aborted because of either a thread exit or an application request.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 250
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\birattam\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-07-08 13:10:03.635 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 13:10:03.636 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 13:10:03.672 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 37.254 ms
+2026-07-08 13:10:03.677 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.120 ms
+2026-07-08 13:10:03.684 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-08 13:10:03.685 +05:30 [INF] [cid-mrbrpkgr-g9h8obzg] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-08 13:11:05.740 +05:30 [INF] [cid-mrbrpkgr-g9h8obzg] ← Claude claude-sonnet-4-6 | in=19874 out=4096 tokens | cache_write=6858 cache_read=0 | stop=max_tokens
+2026-07-08 13:11:05.746 +05:30 [INF] [cid-mrbrpkgr-g9h8obzg] CoA review completed | rows=42 | model=claude-sonnet-4-6 | tokens=23970
+2026-07-08 13:11:05.753 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 62070.192 ms
+2026-07-08 13:11:06.068 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 13:11:06.069 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 13:11:06.078 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 10.394 ms
+2026-07-08 13:11:06.081 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 13:11:06.083 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 13:11:06.092 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 12.020 ms
+2026-07-08 13:14:10.965 +05:30 [INF] HTTP GET /swagger responded 404 in 0.459 ms
+2026-07-08 13:14:13.036 +05:30 [INF] HTTP GET /swagger responded 404 in 0.116 ms
+2026-07-08 14:12:22.236 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 14:12:22.238 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 14:12:22.315 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 80.572 ms
+2026-07-08 14:12:22.319 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.115 ms
+2026-07-08 14:12:22.323 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-08 14:12:22.324 +05:30 [INF] [cid-mrbtxp7x-fgwswyxo] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-08 14:12:51.181 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 14:12:51.185 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 14:12:51.200 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 21.215 ms
+2026-07-08 14:12:51.238 +05:30 [INF] HTTP GET /favicon.ico responded 404 in 0.110 ms
+2026-07-08 14:13:26.381 +05:30 [INF] [cid-mrbtxp7x-fgwswyxo] ← Claude claude-sonnet-4-6 | in=19874 out=4096 tokens | cache_write=6858 cache_read=0 | stop=max_tokens
+2026-07-08 14:13:26.383 +05:30 [INF] [cid-mrbtxp7x-fgwswyxo] CoA review completed | rows=42 | model=claude-sonnet-4-6 | tokens=23970
+2026-07-08 14:13:26.387 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 64064.472 ms
+2026-07-08 14:13:26.622 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 14:13:26.623 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 14:13:26.873 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 252.256 ms
+2026-07-08 14:13:26.878 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 14:13:26.878 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 14:13:26.886 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 9.079 ms
+2026-07-08 15:17:34.932 +05:30 [INF] GET /api/find/balance
+2026-07-08 15:17:34.945 +05:30 [INF] Cost API URL = /v1/organizations/analytics/cost_report?starting_at=2026-07-08T00%3A00%3A00Z&ending_at=2026-07-08T09%3A47%3A34Z&bucket_width=1d
+2026-07-08 15:17:35.445 +05:30 [ERR] [balance-check] Cost API 403: {"type":"error","error":{"type":"permission_error","message":"Missing required scopes. Got: ['api:admin'] Needed: ['read:analytics']"},"request_id":"req_011CcpNw3o24TsdWbQD5b58D"}
+2026-07-08 15:17:35.449 +05:30 [ERR] HTTP GET /api/find/balance responded 500 in 537.598 ms
+AIWebservice.Models.AnthropicApiException: Anthropic cost API error (403): {"type":"error","error":{"type":"permission_error","message":"Missing required scopes. Got: ['api:admin'] Needed: ['read:analytics']"},"request_id":"req_011CcpNw3o24TsdWbQD5b58D"}
+   at AIWebservice.Services.AnthropicBillingService.GetTodayCostAsync(String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\AnthropicBillingService.cs:line 96
+   at AIWebservice.Controllers.RegNoReviewController.GetBalance(CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 178
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-08 15:17:35.460 +05:30 [ERR] [0HNMSN9L28H4G:00000001] Unhandled AnthropicApiException: Anthropic cost API error (403): {"type":"error","error":{"type":"permission_error","message":"Missing required scopes. Got: ['api:admin'] Needed: ['read:analytics']"},"request_id":"req_011CcpNw3o24TsdWbQD5b58D"}
+AIWebservice.Models.AnthropicApiException: Anthropic cost API error (403): {"type":"error","error":{"type":"permission_error","message":"Missing required scopes. Got: ['api:admin'] Needed: ['read:analytics']"},"request_id":"req_011CcpNw3o24TsdWbQD5b58D"}
+   at AIWebservice.Services.AnthropicBillingService.GetTodayCostAsync(String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\AnthropicBillingService.cs:line 96
+   at AIWebservice.Controllers.RegNoReviewController.GetBalance(CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 178
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\birattam\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-07-08 15:40:13.941 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 15:40:13.942 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 15:40:15.120 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 1179.686 ms
+2026-07-08 15:40:15.125 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.123 ms
+2026-07-08 15:40:15.130 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-08 15:40:15.131 +05:30 [INF] [cid-mrbx2pqq-ql9tddk2] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-08 15:41:19.013 +05:30 [INF] [cid-mrbx2pqq-ql9tddk2] ← Claude claude-sonnet-4-6 | in=19874 out=4096 tokens | cache_write=7032 cache_read=0 | stop=max_tokens
+2026-07-08 15:41:19.015 +05:30 [INF] [cid-mrbx2pqq-ql9tddk2] CoA review completed | rows=42 | model=claude-sonnet-4-6 | tokens=23970
+2026-07-08 15:41:19.020 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 63891.310 ms
+2026-07-08 15:41:19.129 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 15:41:19.131 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 15:41:19.144 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 15.184 ms
+2026-07-08 15:41:19.147 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 15:41:19.148 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 15:41:19.176 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 30.000 ms
+2026-07-08 15:56:04.846 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 15:56:04.847 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 15:56:05.004 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 159.360 ms
+2026-07-08 15:56:05.011 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.091 ms
+2026-07-08 15:56:05.016 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-08 15:56:05.017 +05:30 [INF] [cid-mrbxn2oe-0ygbiggs] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-08 15:57:11.120 +05:30 [INF] [cid-mrbxn2oe-0ygbiggs] ← Claude claude-sonnet-4-6 | in=19874 out=4096 tokens | cache_write=7032 cache_read=0 | stop=max_tokens
+2026-07-08 15:57:11.129 +05:30 [INF] [cid-mrbxn2oe-0ygbiggs] CoA review completed | rows=42 | model=claude-sonnet-4-6 | tokens=23970
+2026-07-08 15:57:11.131 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 66117.059 ms
+2026-07-08 15:57:11.200 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 15:57:11.201 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 15:57:11.210 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 10.142 ms
+2026-07-08 15:57:11.213 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 15:57:11.214 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 15:57:11.222 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 8.918 ms
+2026-07-08 18:03:52.396 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-08 18:03:52.399 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-08 18:03:52.439 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 47.557 ms
+2026-07-08 18:03:52.445 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.838 ms
+2026-07-08 18:03:52.451 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260512148
+2026-07-08 18:03:52.452 +05:30 [INF] [cid-mrc27ewp-g4n82ayd] CoA fetch+review regNo=EFRAC/FDS/260512148
+2026-07-08 18:04:57.277 +05:30 [INF] [cid-mrc27ewp-g4n82ayd] ← Claude claude-sonnet-4-6 | in=31165 out=4096 tokens | cache_write=7032 cache_read=0 | stop=max_tokens
+2026-07-08 18:04:57.281 +05:30 [INF] [cid-mrc27ewp-g4n82ayd] CoA review completed | rows=67 | model=claude-sonnet-4-6 | tokens=35261
+2026-07-08 18:04:57.285 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 64836.414 ms
+2026-07-08 18:04:57.380 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-08 18:04:57.381 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-08 18:04:57.390 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 10.687 ms
+2026-07-08 18:04:57.393 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-08 18:04:57.394 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-08 18:04:57.402 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 9.253 ms
+2026-07-08 18:07:03.297 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-08 18:07:03.298 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-08 18:07:03.334 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 48.380 ms
+2026-07-08 18:07:03.338 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.059 ms
+2026-07-08 18:07:03.342 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260512148
+2026-07-08 18:07:03.343 +05:30 [INF] [cid-mrc2bi7c-ui532pzu] CoA fetch+review regNo=EFRAC/FDS/260512148
+2026-07-08 18:08:06.295 +05:30 [INF] [cid-mrc2bi7c-ui532pzu] ← Claude claude-sonnet-4-6 | in=31165 out=4096 tokens | cache_write=7088 cache_read=0 | stop=max_tokens
+2026-07-08 18:08:06.301 +05:30 [INF] [cid-mrc2bi7c-ui532pzu] CoA review completed | rows=67 | model=claude-sonnet-4-6 | tokens=35261
+2026-07-08 18:08:06.305 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 62964.287 ms
+2026-07-08 18:08:06.370 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-08 18:08:06.371 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-08 18:08:06.379 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 9.476 ms
+2026-07-08 18:08:06.382 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-08 18:08:06.383 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-08 18:08:06.390 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 8.508 ms
+2026-07-08 18:09:18.330 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 18:09:18.331 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 18:09:18.338 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 8.818 ms
+2026-07-08 18:09:18.351 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.120 ms
+2026-07-08 18:09:18.356 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-08 18:09:18.357 +05:30 [INF] [cid-mrc2eedp-lf1hvlhw] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-08 18:10:25.182 +05:30 [INF] [cid-mrc2eedp-lf1hvlhw] ← Claude claude-sonnet-4-6 | in=19874 out=4096 tokens | cache_write=0 cache_read=7088 | stop=max_tokens
+2026-07-08 18:10:25.186 +05:30 [INF] [cid-mrc2eedp-lf1hvlhw] CoA review completed | rows=42 | model=claude-sonnet-4-6 | tokens=23970
+2026-07-08 18:10:25.199 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 66843.601 ms
+2026-07-08 18:10:25.301 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 18:10:25.302 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 18:10:25.309 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 9.215 ms
+2026-07-08 18:10:25.312 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 18:10:25.313 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 18:10:25.320 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 8.450 ms
+2026-07-08 18:11:42.296 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 18:11:42.297 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 18:11:42.305 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 9.295 ms
+2026-07-08 18:11:42.310 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.084 ms
+2026-07-08 18:11:42.314 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-08 18:11:42.315 +05:30 [INF] [cid-mrc2hhgk-tm9zmuvr] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-08 18:12:48.320 +05:30 [INF] [cid-mrc2hhgk-tm9zmuvr] ← Claude claude-sonnet-4-6 | in=19874 out=4096 tokens | cache_write=7032 cache_read=0 | stop=max_tokens
+2026-07-08 18:12:48.322 +05:30 [INF] [cid-mrc2hhgk-tm9zmuvr] CoA review completed | rows=42 | model=claude-sonnet-4-6 | tokens=23970
+2026-07-08 18:12:48.324 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 66010.741 ms
+2026-07-08 18:12:48.437 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 18:12:48.438 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 18:12:48.446 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 9.293 ms
+2026-07-08 18:12:48.453 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-08 18:12:48.454 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-08 18:12:48.462 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 9.766 ms
+2026-07-08 18:16:16.812 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-08 18:16:16.813 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-08 18:16:16.822 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 9.887 ms
+2026-07-08 18:16:16.825 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.108 ms
+2026-07-08 18:16:16.829 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260512148
+2026-07-08 18:16:16.830 +05:30 [INF] [cid-mrc2nd9z-8gwn7aiw] CoA fetch+review regNo=EFRAC/FDS/260512148
+2026-07-08 18:17:19.051 +05:30 [INF] [cid-mrc2nd9z-8gwn7aiw] ← Claude claude-sonnet-4-6 | in=31165 out=4096 tokens | cache_write=7088 cache_read=0 | stop=max_tokens
+2026-07-08 18:17:19.054 +05:30 [INF] [cid-mrc2nd9z-8gwn7aiw] CoA review completed | rows=67 | model=claude-sonnet-4-6 | tokens=35261
+2026-07-08 18:17:19.056 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 62227.883 ms
+2026-07-08 18:17:19.215 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-08 18:17:19.217 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-08 18:17:19.228 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 12.852 ms
+2026-07-08 18:17:19.232 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-08 18:17:19.235 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-08 18:17:19.245 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 12.954 ms

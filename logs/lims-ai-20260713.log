@@ -1,0 +1,47 @@
+2026-07-13 15:35:40.381 [INF] Starting LIMS AI Middleware...
+2026-07-13 15:35:40.955 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-07-13 15:38:00.329 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-13 15:38:00.337 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-13 15:38:02.404 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 2215.777 ms
+2026-07-13 15:38:02.412 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 1.674 ms
+2026-07-13 15:38:02.462 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-13 15:38:02.468 +05:30 [INF] [cid-mrj274o1-xiqhgkh2] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-13 15:39:07.901 +05:30 [INF] [cid-mrj274o1-xiqhgkh2] ← Claude claude-sonnet-4-6 | in=19874 out=4096 tokens | cache_write=7206 cache_read=0 | stop=max_tokens
+2026-07-13 15:39:07.907 +05:30 [INF] [cid-mrj274o1-xiqhgkh2] CoA review completed | rows=42 | model=claude-sonnet-4-6 | tokens=23970
+2026-07-13 15:39:07.968 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 65548.609 ms
+2026-07-13 15:39:08.136 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-13 15:39:08.137 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-13 15:39:08.170 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 38.544 ms
+2026-07-13 15:39:08.173 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-13 15:39:08.174 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-13 15:39:08.211 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 39.507 ms
+2026-07-13 15:43:07.331 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-13 15:43:07.333 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-13 15:43:07.360 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 29.788 ms
+2026-07-13 15:43:07.364 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.140 ms
+2026-07-13 15:43:07.371 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260512148
+2026-07-13 15:43:07.372 +05:30 [INF] [cid-mrj2dnz5-vc8vgrba] CoA fetch+review regNo=EFRAC/FDS/260512148
+2026-07-13 15:44:11.841 +05:30 [INF] [cid-mrj2dnz5-vc8vgrba] ← Claude claude-sonnet-4-6 | in=31165 out=4096 tokens | cache_write=0 cache_read=7206 | stop=max_tokens
+2026-07-13 15:44:11.855 +05:30 [INF] [cid-mrj2dnz5-vc8vgrba] CoA review completed | rows=67 | model=claude-sonnet-4-6 | tokens=35261
+2026-07-13 15:44:11.869 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 64499.269 ms
+2026-07-13 15:44:11.968 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-13 15:44:11.970 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-13 15:44:12.045 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 77.766 ms
+2026-07-13 15:44:12.051 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-13 15:44:12.055 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-13 15:44:12.087 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 36.817 ms
+2026-07-13 15:46:37.696 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260306003
+2026-07-13 15:46:37.698 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260306003
+2026-07-13 15:46:37.734 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 37.900 ms
+2026-07-13 15:46:37.738 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.133 ms
+2026-07-13 15:46:37.745 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260306003
+2026-07-13 15:46:37.746 +05:30 [INF] [cid-mrj2i6av-jv8ajji1] CoA fetch+review regNo=EFRAC/FDS/260306003
+2026-07-13 15:47:36.030 +05:30 [INF] [cid-mrj2i6av-jv8ajji1] ← Claude claude-sonnet-4-6 | in=5633 out=3785 tokens | cache_write=0 cache_read=7206 | stop=end_turn
+2026-07-13 15:47:36.043 +05:30 [INF] [cid-mrj2i6av-jv8ajji1] CoA review completed | rows=12 | model=claude-sonnet-4-6 | tokens=9418
+2026-07-13 15:47:36.054 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 58309.912 ms
+2026-07-13 15:47:36.123 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260306003
+2026-07-13 15:47:36.125 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260306003
+2026-07-13 15:47:36.156 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 33.512 ms
+2026-07-13 15:47:36.160 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260306003
+2026-07-13 15:47:36.161 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260306003
+2026-07-13 15:47:36.203 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 44.075 ms

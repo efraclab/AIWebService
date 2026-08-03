@@ -21,7 +21,7 @@ namespace AIWebservice.Extensions
                 configuration.GetSection(CacheSettings.SectionName));
 
             services.AddHttpClient<ClaudeService>();
-
+            services.AddHttpClient<AnthropicBillingService>();
             services.AddSingleton<PromptTemplateService>();
             services.AddScoped<AIReviewProcessingService>();
             services.AddScoped<ReportReviewService>();

@@ -1,0 +1,501 @@
+2026-07-07 14:02:56.250 [INF] Starting LIMS AI Middleware...
+2026-07-07 14:02:56.621 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-07-07 14:06:01.854 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 45.590 ms
+2026-07-07 14:06:03.931 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-07 14:06:03.938 +05:30 [INF] [1384203c-778d-44c9-901e-b31621e5cae0] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-07 14:06:17.023 +05:30 [ERR] [1384203c-778d-44c9-901e-b31621e5cae0] Network error reaching Anthropic API
+System.Net.Http.HttpRequestException: No such host is known. (api.anthropic.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 250
+2026-07-07 14:06:17.091 +05:30 [ERR] HTTP POST /api/find/fetch-review responded 500 in 13386.540 ms
+AIWebservice.Models.AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 263
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-07 14:06:17.119 +05:30 [ERR] [0HNMS0B3CK6UU:00000001] Unhandled AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+AIWebservice.Models.AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 263
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\birattam\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-07-07 14:06:20.544 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 1.535 ms
+2026-07-07 14:06:20.551 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-07 14:06:20.553 +05:30 [INF] [cec0d242-c89d-48c0-85a0-83de367eea23] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-07 14:06:32.666 +05:30 [ERR] [cec0d242-c89d-48c0-85a0-83de367eea23] Network error reaching Anthropic API
+System.Net.Http.HttpRequestException: No such host is known. (api.anthropic.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 250
+2026-07-07 14:06:32.700 +05:30 [ERR] HTTP POST /api/find/fetch-review responded 500 in 12151.603 ms
+AIWebservice.Models.AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 263
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-07 14:06:32.714 +05:30 [ERR] [0HNMS0B3CK6UU:00000003] Unhandled AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+AIWebservice.Models.AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 263
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\birattam\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-07-07 14:06:45.963 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.113 ms
+2026-07-07 14:06:45.979 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-07 14:06:45.980 +05:30 [INF] [2b19604e-b78a-44db-8e45-77fd8316f42d] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-07 14:06:58.064 +05:30 [ERR] [2b19604e-b78a-44db-8e45-77fd8316f42d] Network error reaching Anthropic API
+System.Net.Http.HttpRequestException: No such host is known. (api.anthropic.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 250
+2026-07-07 14:06:58.071 +05:30 [ERR] HTTP POST /api/find/fetch-review responded 500 in 12103.118 ms
+AIWebservice.Models.AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 263
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-07 14:06:58.086 +05:30 [ERR] [0HNMS0B3CK6UU:00000005] Unhandled AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+AIWebservice.Models.AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 263
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\birattam\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-07-07 14:08:57.234 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.151 ms
+2026-07-07 14:08:57.239 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-07 14:08:57.241 +05:30 [INF] [fee7c9fc-5951-4127-8d77-3de02c403dff] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-07 14:09:09.392 +05:30 [ERR] [fee7c9fc-5951-4127-8d77-3de02c403dff] Network error reaching Anthropic API
+System.Net.Http.HttpRequestException: No such host is known. (api.anthropic.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 250
+2026-07-07 14:09:09.406 +05:30 [ERR] HTTP POST /api/find/fetch-review responded 500 in 12168.216 ms
+AIWebservice.Models.AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 263
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-07 14:09:09.415 +05:30 [ERR] [0HNMS0B3CK6UV:00000002] Unhandled AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+AIWebservice.Models.AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 263
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\birattam\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-07-07 14:10:15.744 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.120 ms
+2026-07-07 14:10:15.749 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-07 14:10:15.750 +05:30 [INF] [b010bfd5-fe9b-4852-8e43-71d01711a60a] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-07 14:10:27.899 +05:30 [ERR] [b010bfd5-fe9b-4852-8e43-71d01711a60a] Network error reaching Anthropic API
+System.Net.Http.HttpRequestException: No such host is known. (api.anthropic.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 250
+2026-07-07 14:10:27.919 +05:30 [ERR] HTTP POST /api/find/fetch-review responded 500 in 12170.332 ms
+AIWebservice.Models.AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 263
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-07 14:10:27.933 +05:30 [ERR] [0HNMS0B3CK6V0:00000002] Unhandled AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+AIWebservice.Models.AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 263
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\birattam\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-07-07 14:10:43.258 [INF] Starting LIMS AI Middleware...
+2026-07-07 14:10:43.543 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-07-07 14:11:12.442 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 46.291 ms
+2026-07-07 14:11:12.699 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-07 14:11:12.717 +05:30 [INF] [ae3da893-4416-4745-8335-3a26ce45466d] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-07 14:11:25.851 +05:30 [ERR] [ae3da893-4416-4745-8335-3a26ce45466d] Network error reaching Anthropic API
+System.Net.Http.HttpRequestException: No such host is known. (api.anthropic.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 250
+2026-07-07 14:11:25.897 +05:30 [ERR] HTTP POST /api/find/fetch-review responded 500 in 13409.502 ms
+AIWebservice.Models.AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 263
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-07 14:11:25.923 +05:30 [ERR] [0HNMS0DVVKAID:00000002] Unhandled AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+AIWebservice.Models.AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 263
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\birattam\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-07-07 14:15:47.762 [INF] Starting LIMS AI Middleware...
+2026-07-07 14:15:48.016 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-07-07 15:26:18.942 [INF] Starting LIMS AI Middleware...
+2026-07-07 15:26:19.299 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-07-07 15:27:14.042 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 39.992 ms
+2026-07-07 15:27:14.283 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-07 15:27:14.293 +05:30 [INF] [135ae1a2-3f07-474e-8b07-b0f361867fbe] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-07 15:27:26.461 +05:30 [ERR] [135ae1a2-3f07-474e-8b07-b0f361867fbe] Network error reaching Anthropic API
+System.Net.Http.HttpRequestException: No such host is known. (api.anthropic.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 250
+2026-07-07 15:27:26.494 +05:30 [ERR] HTTP POST /api/find/fetch-review responded 500 in 12386.773 ms
+AIWebservice.Models.AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 263
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-07 15:27:26.513 +05:30 [ERR] [0HNMS1OFDK216:00000002] Unhandled AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+AIWebservice.Models.AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 263
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\birattam\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-07-07 16:31:20.546 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 1.664 ms
+2026-07-07 16:31:20.556 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-07 16:31:20.557 +05:30 [INF] [cid-mrajgkd6-v7pz86es] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-07 16:31:31.742 +05:30 [ERR] [cid-mrajgkd6-v7pz86es] Network error reaching Anthropic API
+System.Net.Http.HttpRequestException: No such host is known. (api.anthropic.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 250
+2026-07-07 16:31:31.766 +05:30 [ERR] HTTP POST /api/find/fetch-review responded 500 in 11216.786 ms
+AIWebservice.Models.AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 263
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-07 16:31:31.787 +05:30 [ERR] [0HNMS1OFDK217:00000002] Unhandled AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+AIWebservice.Models.AnthropicApiException: A network error occurred while contacting the Anthropic API: No such host is known. (api.anthropic.com:443)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 263
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\birattam\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28

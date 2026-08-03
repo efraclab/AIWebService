@@ -9,6 +9,11 @@ namespace AIWebservice.Models
         public TokenUsage Usage { get; init; } = new();
         public string Model { get; init; } = string.Empty;
         public DateTimeOffset ProcessedAt { get; init; } = DateTimeOffset.UtcNow;
+        public decimal EstimatedCostUsd { get; init; }
+
+        public int CacheWriteTokens { get; init; }
+
+        public int CacheReadTokens { get; init; }
     }
 
     public sealed class UploadedPdfInfo

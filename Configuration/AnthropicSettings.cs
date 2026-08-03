@@ -1,14 +1,16 @@
-﻿namespace AIWebservice.Configuration
+﻿// file name: AnthropicSettings.cs
+namespace AIWebservice.Configuration
 {
     public sealed class AnthropicSettings
     {
         public const string SectionName = "Anthropic";
 
         public string ApiKey { get; init; } = string.Empty;
+        public string AdminApiKey    { get; init; } = string.Empty;
 
         public string DefaultModel { get; init; } = "claude-sonnet-4-6";
 
-        public int MaxTokens { get; init; } = 1024;
+        public int MaxTokens { get; init; } = 100000;
 
         public string BaseUrl { get; init; } = "https://api.anthropic.com";
 
@@ -17,3 +19,5 @@
         public int TimeoutSeconds { get; init; } = 60;
     }
 }
+
+

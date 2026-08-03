@@ -20,6 +20,12 @@ namespace AIWebservice.Models
         public DateTimeOffset ProcessedAt { get; init; } = DateTimeOffset.UtcNow;
 
         public bool FromCache { get; init; } = false;
+
+        public decimal EstimatedCostUsd { get; init; }
+
+        public int CacheWriteTokens { get; init; }
+
+        public int CacheReadTokens { get; init; }
     }
 
     public sealed class TokenUsage

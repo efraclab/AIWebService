@@ -1,4 +1,5 @@
-﻿using AIWebservice.Models;
+﻿// file name: AIReviewController.cs
+using AIWebservice.Models;
 using AIWebservice.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
@@ -128,9 +129,13 @@ namespace AIWebservice.Controllers
         [HttpGet("health")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [DisableRateLimiting]
+
+           // balance check shouldn't consume your claude_api rate limit slots
         public IActionResult Health()
             => Ok(new { status = "healthy", utc = DateTimeOffset.UtcNow });
 
+        [HttpGet("balance")]
+        [DisableRateLimiting]
         // ─────────────────────────────────────────────────────────────────────────
         // Helpers
         // ─────────────────────────────────────────────────────────────────────────

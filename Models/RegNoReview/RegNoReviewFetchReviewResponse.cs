@@ -11,5 +11,11 @@ namespace AIWebservice.Models.coa
         public TokenUsage Usage { get; set; } = new();
         public string Model { get; set; } = string.Empty;
         public DateTimeOffset ProcessedAt { get; set; } = DateTimeOffset.UtcNow;
+
+        public decimal EstimatedCostUsd { get; init; }
+
+        public int CacheWriteTokens { get; init; }
+
+        public int CacheReadTokens { get; init; }
     }
 }

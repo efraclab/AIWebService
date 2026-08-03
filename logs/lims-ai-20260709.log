@@ -1,0 +1,17 @@
+2026-07-09 09:53:14.586 [INF] Starting LIMS AI Middleware...
+2026-07-09 09:53:15.784 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-07-09 10:01:51.124 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-09 10:01:51.134 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-09 10:01:51.894 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 916.802 ms
+2026-07-09 10:01:51.905 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 2.483 ms
+2026-07-09 10:01:51.956 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260512148
+2026-07-09 10:01:51.960 +05:30 [INF] [cid-mrd0fec0-kzk5nd5z] CoA fetch+review regNo=EFRAC/FDS/260512148
+2026-07-09 10:02:56.665 +05:30 [INF] [cid-mrd0fec0-kzk5nd5z] ← Claude claude-sonnet-4-6 | in=31165 out=4096 tokens | cache_write=7088 cache_read=0 | stop=max_tokens
+2026-07-09 10:02:56.669 +05:30 [INF] [cid-mrd0fec0-kzk5nd5z] CoA review completed | rows=67 | model=claude-sonnet-4-6 | tokens=35261
+2026-07-09 10:02:56.713 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 64800.906 ms
+2026-07-09 10:02:56.788 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-09 10:02:56.789 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-09 10:02:56.798 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 17.585 ms
+2026-07-09 10:02:56.801 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-09 10:02:56.803 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-09 10:02:56.814 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 13.884 ms

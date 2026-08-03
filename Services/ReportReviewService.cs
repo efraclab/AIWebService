@@ -1,4 +1,6 @@
+// file name: ReportReviewService.cs
 using AIWebservice.Models;
+using AIWebservice.Configuration;
 
 namespace AIWebservice.Services
 {
@@ -71,6 +73,12 @@ namespace AIWebservice.Services
                     maxTokens: request.MaxTokensOverride,
                     correlationId: correlationId,
                     ct: ct);
+                
+                var estimatedCost = AnthropicPricing.Calculate(
+                    usage.InputTokens,
+                    usage.OutputTokens,
+                    usage.CacheCreationInputTokens,
+                    usage.CacheReadInputTokens);
 
                 _logger.LogInformation(
                     "[{CorrelationId}] PDF review completed | model={Model} | tokens={Total}",
@@ -104,6 +112,9 @@ namespace AIWebservice.Services
                         InputTokens = usage.InputTokens,
                         OutputTokens = usage.OutputTokens,
                     },
+                    EstimatedCostUsd = estimatedCost,
+                    CacheWriteTokens = usage.CacheCreationInputTokens,
+                    CacheReadTokens = usage.CacheReadInputTokens,
                     Model = modelUsed,
                     ProcessedAt = DateTimeOffset.UtcNow,
                 };
