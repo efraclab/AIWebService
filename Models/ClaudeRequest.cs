@@ -1,19 +1,8 @@
-<<<<<<< HEAD
-﻿using System.Text.Json.Serialization;
-=======
 using System.Text.Json.Serialization;
->>>>>>> origin/main
 
 namespace AIWebservice.Models
 {
     public sealed record ClaudeApiRequest(
-<<<<<<< HEAD
-    [property: JsonPropertyName("model")] string Model,
-    [property: JsonPropertyName("max_tokens")] int MaxTokens,
-    [property: JsonPropertyName("system")] string System,
-    [property: JsonPropertyName("messages")] IReadOnlyList<ClaudeMessage> Messages
-);
-=======
         [property: JsonPropertyName("model")] string Model,
         [property: JsonPropertyName("max_tokens")] int MaxTokens,
         [property: JsonPropertyName("system")] IReadOnlyList<ClaudeSystemBlock> System,
@@ -35,15 +24,11 @@ namespace AIWebservice.Models
     public sealed record CacheControl(
         [property: JsonPropertyName("type")] string Type
     );
->>>>>>> origin/main
 
     public sealed record ClaudeMessage(
         [property: JsonPropertyName("role")] string Role,
         [property: JsonPropertyName("content")] string Content
     );
-<<<<<<< HEAD
-}
-=======
 
     // ── Block-based message variant (used when content includes documents/files) ──
 
@@ -76,4 +61,3 @@ namespace AIWebservice.Models
         [property: JsonPropertyName("type")] string Type = "text"
     );
 }
->>>>>>> origin/main

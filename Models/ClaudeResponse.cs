@@ -19,13 +19,9 @@ namespace AIWebservice.Models
 
     public sealed record ClaudeUsage(
         [property: JsonPropertyName("input_tokens")] int InputTokens,
-<<<<<<< HEAD
-        [property: JsonPropertyName("output_tokens")] int OutputTokens
-=======
         [property: JsonPropertyName("output_tokens")] int OutputTokens,
         [property: JsonPropertyName("cache_creation_input_tokens")] int CacheCreationInputTokens = 0,
         [property: JsonPropertyName("cache_read_input_tokens")] int CacheReadInputTokens = 0
->>>>>>> origin/main
     );
 
     public sealed record ClaudeApiError(
@@ -37,8 +33,6 @@ namespace AIWebservice.Models
         [property: JsonPropertyName("type")] string Type,
         [property: JsonPropertyName("message")] string Message
     );
-<<<<<<< HEAD
-=======
 
     public sealed record ClaudeFileUploadResponse(
         [property: JsonPropertyName("id")] string Id,
@@ -48,5 +42,4 @@ namespace AIWebservice.Models
         [property: JsonPropertyName("size_bytes")] long SizeBytes,
         [property: JsonPropertyName("created_at")] DateTimeOffset CreatedAt
     );
->>>>>>> origin/main
 }

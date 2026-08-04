@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-﻿using AIWebservice.Configuration;
-=======
 using AIWebservice.Configuration;
->>>>>>> origin/main
 using AIWebservice.Models;
 using Microsoft.Extensions.Options;
 using System.Net;
@@ -18,12 +14,9 @@ namespace AIWebservice.Services
         private readonly AnthropicSettings _settings;
         private readonly ILogger<ClaudeService> _logger;
 
-<<<<<<< HEAD
-=======
         private const string BetaPromptCaching = "prompt-caching-2024-07-31";
         private const string BetaFilesApi = "files-api-2025-04-14";
 
->>>>>>> origin/main
         private static readonly JsonSerializerOptions _jsonOptions = new()
         {
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
@@ -41,11 +34,8 @@ namespace AIWebservice.Services
             _logger = logger;
 
             // Configure shared headers on the HttpClient (registered as typed client).
-<<<<<<< HEAD
-=======
             // NOTE: anthropic-beta is set per-request so different endpoints can opt into
             // different beta features (e.g. prompt-caching vs. files-api).
->>>>>>> origin/main
             _http.BaseAddress = new Uri(_settings.BaseUrl);
             _http.Timeout = TimeSpan.FromSeconds(_settings.TimeoutSeconds);
             _http.DefaultRequestHeaders.Add("x-api-key", _settings.ApiKey);
@@ -58,19 +48,6 @@ namespace AIWebservice.Services
         // Public API
         // ─────────────────────────────────────────────────────────────────────────
 
-<<<<<<< HEAD
-        /// <summary>
-        /// Sends a system + user prompt pair to Claude and returns the raw text reply.
-        /// </summary>
-        /// <param name="systemPrompt">The system turn that sets Claude's role/output contract.</param>
-        /// <param name="userMessage">The user turn containing the prompt and serialised data.</param>
-        /// <param name="model">Claude model string; falls back to configured default.</param>
-        /// <param name="maxTokens">Token budget; falls back to configured default.</param>
-        /// <param name="correlationId">For structured log correlation.</param>
-        /// <param name="ct">Cancellation token.</param>
-        private const int MaxRetries = 2;
-
-=======
         private const int MaxRetries = 2;
 
         // Deterministic JSON-extraction tasks (rule-based CoA/report review) don't need
@@ -84,58 +61,32 @@ namespace AIWebservice.Services
         /// <summary>
         /// Sends a system + user prompt pair to Claude and returns the raw text reply.
         /// </summary>
->>>>>>> origin/main
         public async Task<(string Text, ClaudeUsage Usage, string Model)> SendAsync(
             string systemPrompt,
             string userMessage,
             string? model = null,
             int? maxTokens = null,
-<<<<<<< HEAD
-=======
             double? temperature = null,
             bool disableThinking = true,
->>>>>>> origin/main
             string? correlationId = null,
             CancellationToken ct = default)
         {
             var effectiveModel = string.IsNullOrWhiteSpace(model) ? _settings.DefaultModel : model;
             var effectiveMaxTokens = maxTokens ?? _settings.MaxTokens;
-<<<<<<< HEAD
-=======
             var effectiveTemperature = temperature ?? _settings.DefaultTemperature;
->>>>>>> origin/main
 
             var requestBody = new ClaudeApiRequest(
                 Model: effectiveModel,
                 MaxTokens: effectiveMaxTokens,
-<<<<<<< HEAD
-                System: systemPrompt,
-                Messages: [new ClaudeMessage("user", userMessage)]
-=======
                 System: [new ClaudeSystemBlock("text", systemPrompt, new CacheControl("ephemeral"))],
                 Messages: [new ClaudeMessage("user", userMessage)],
                 Temperature: effectiveTemperature,
                 Thinking: disableThinking ? DisabledThinking : null
->>>>>>> origin/main
             );
 
             var json = JsonSerializer.Serialize(requestBody, _jsonOptions);
 
             _logger.LogDebug(
-<<<<<<< HEAD
-                "[{CorrelationId}] → Claude {Model} | max_tokens={MaxTokens} | sys={SysLen} chars | user={UserLen} chars",
-                correlationId, effectiveModel, effectiveMaxTokens,
-                systemPrompt.Length, userMessage.Length);
-
-            for (var attempt = 0; attempt <= MaxRetries; attempt++)
-            {
-                HttpResponseMessage response;
-                var requestContent = new StringContent(json, Encoding.UTF8, "application/json");
-
-                try
-                {
-                    response = await _http.PostAsync("/v1/messages", requestContent, ct);
-=======
                 "[{CorrelationId}] → Claude {Model} | max_tokens={MaxTokens} | temperature={Temperature} | thinking_disabled={ThinkingDisabled} | sys={SysLen} chars | user={UserLen} chars",
                 correlationId, effectiveModel, effectiveMaxTokens, effectiveTemperature, disableThinking,
                 systemPrompt.Length, userMessage.Length);
@@ -315,7 +266,6 @@ namespace AIWebservice.Services
                 try
                 {
                     response = await _http.SendAsync(request, ct);
->>>>>>> origin/main
                 }
                 catch (TaskCanceledException ex) when (!ct.IsCancellationRequested)
                 {
@@ -351,15 +301,6 @@ namespace AIWebservice.Services
 
                 if (parsed is not null && parsed.Content.Count > 0)
                 {
-<<<<<<< HEAD
-                    var text = string.Concat(parsed.Content.Select(b => b.Text));
-                    var usage = parsed.Usage;
-
-                    _logger.LogInformation(
-                        "[{CorrelationId}] ← Claude {Model} | in={In} out={Out} tokens | stop={Stop}",
-                        correlationId, parsed.Model,
-                        usage.InputTokens, usage.OutputTokens, parsed.StopReason);
-=======
                     // Only concatenate genuine "text" blocks. Other block types (e.g. "thinking",
                     // "redacted_thinking", future types) must never be treated as the answer —
                     // concatenating them blindly is what let raw reasoning leak into responses.
@@ -411,17 +352,12 @@ namespace AIWebservice.Services
                             "enabled by default, verify the request is sending thinking:{type:\"disabled\"} " +
                             "or that max_tokens leaves enough room for both thinking and the text response.");
                     }
->>>>>>> origin/main
 
                     return (text, usage, parsed.Model);
                 }
 
                 var stopReason = parsed?.StopReason ?? "null_response";
 
-<<<<<<< HEAD
-                // Refusals are deterministic — retrying won't help.
-=======
->>>>>>> origin/main
                 if (stopReason == "refusal")
                 {
                     _logger.LogError(
@@ -437,11 +373,7 @@ namespace AIWebservice.Services
                     var delayMs = 500 * (attempt + 1);
                     _logger.LogWarning(
                         "[{CorrelationId}] Empty content array (stop_reason={StopReason}), retrying attempt {Attempt}/{MaxRetries} after {Delay}ms. Raw={Raw}",
-<<<<<<< HEAD
-                        correlationId, stopReason, attempt + 1, MaxRetries, responseJson.Length > 500 ? responseJson[..500] : responseJson);
-=======
                         correlationId, stopReason, attempt + 1, MaxRetries, delayMs, responseJson.Length > 500 ? responseJson[..500] : responseJson);
->>>>>>> origin/main
                     await Task.Delay(delayMs, ct);
                 }
                 else
@@ -456,13 +388,6 @@ namespace AIWebservice.Services
                 $"Anthropic returned an empty content array after {MaxRetries + 1} attempts.");
         }
 
-<<<<<<< HEAD
-        // ─────────────────────────────────────────────────────────────────────────
-        // Private helpers
-        // ─────────────────────────────────────────────────────────────────────────
-
-=======
->>>>>>> origin/main
         private async Task EnsureSuccessAsync(
             HttpResponseMessage response,
             string? correlationId,
@@ -485,10 +410,6 @@ namespace AIWebservice.Services
             var errorType = errorEnvelope?.Error?.Type ?? "unknown_error";
             var errorMessage = errorEnvelope?.Error?.Message ?? body;
 
-<<<<<<< HEAD
-            // Map to domain exceptions
-=======
->>>>>>> origin/main
             switch (response.StatusCode)
             {
                 case HttpStatusCode.Unauthorized:
@@ -497,11 +418,7 @@ namespace AIWebservice.Services
                         $"Anthropic authentication failed ({statusCode}): {errorMessage}");
 
                 case HttpStatusCode.TooManyRequests:
-<<<<<<< HEAD
-                case (HttpStatusCode)529:   // Anthropic overloaded
-=======
                 case (HttpStatusCode)529:
->>>>>>> origin/main
                     throw new AnthropicRateLimitException(statusCode,
                         $"Anthropic rate limit / overload ({statusCode}): {errorMessage}");
 
@@ -511,8 +428,4 @@ namespace AIWebservice.Services
             }
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/main

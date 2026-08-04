@@ -1,9 +1,5 @@
 bin/
 obj/
 .vs/
-<<<<<<< HEAD
-appsettings.json
-=======
 appsettings.json
 appsettings.Development.json
->>>>>>> origin/main

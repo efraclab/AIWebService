@@ -5,12 +5,6 @@
         public const string SectionName = "Anthropic";
 
         public string ApiKey { get; init; } = string.Empty;
-<<<<<<< HEAD
-
-        public string DefaultModel { get; init; } = "claude-sonnet-4-6";
-
-        public int MaxTokens { get; init; } = 1024;
-=======
         public string AdminApiKey    { get; init; } = string.Empty;
 
         // ⚠ Verify this is a real, currently-supported model ID via the Console or
@@ -26,7 +20,6 @@
         // Low/zero temperature for deterministic rule-checking tasks (CoA/QC review).
         // Reduces (but does not eliminate) run-to-run variance in which findings surface.
         public double DefaultTemperature { get; init; } = 0.0;
->>>>>>> origin/main
 
         public string BaseUrl { get; init; } = "https://api.anthropic.com";
 
@@ -34,8 +27,4 @@
 
         public int TimeoutSeconds { get; init; } = 60;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/main
