@@ -50,6 +50,14 @@ namespace AIWebservice.Services
 
         private const int MaxRetries = 2;
 
+        // Deterministic JSON-extraction tasks (rule-based CoA/report review) don't need
+        // visible reasoning and shouldn't burn max_tokens on it. Explicitly disabled by
+        // default rather than inheriting whatever the resolved model defaults to.
+        // NOTE: some thinking-capable models only accept "disabled" at effort "high" or
+        // below — if your resolved model defaults to a higher effort tier and this causes
+        // a 400, you'll need to also send an explicit lower "effort" value alongside this.
+        private static readonly ClaudeThinkingConfig DisabledThinking = new("disabled");
+
         /// <summary>
         /// Sends a system + user prompt pair to Claude and returns the raw text reply.
         /// </summary>
@@ -58,24 +66,29 @@ namespace AIWebservice.Services
             string userMessage,
             string? model = null,
             int? maxTokens = null,
+            double? temperature = null,
+            bool disableThinking = true,
             string? correlationId = null,
             CancellationToken ct = default)
         {
             var effectiveModel = string.IsNullOrWhiteSpace(model) ? _settings.DefaultModel : model;
             var effectiveMaxTokens = maxTokens ?? _settings.MaxTokens;
+            var effectiveTemperature = temperature ?? _settings.DefaultTemperature;
 
             var requestBody = new ClaudeApiRequest(
                 Model: effectiveModel,
                 MaxTokens: effectiveMaxTokens,
                 System: [new ClaudeSystemBlock("text", systemPrompt, new CacheControl("ephemeral"))],
-                Messages: [new ClaudeMessage("user", userMessage)]
+                Messages: [new ClaudeMessage("user", userMessage)],
+                Temperature: effectiveTemperature,
+                Thinking: disableThinking ? DisabledThinking : null
             );
 
             var json = JsonSerializer.Serialize(requestBody, _jsonOptions);
 
             _logger.LogDebug(
-                "[{CorrelationId}] → Claude {Model} | max_tokens={MaxTokens} | sys={SysLen} chars | user={UserLen} chars",
-                correlationId, effectiveModel, effectiveMaxTokens,
+                "[{CorrelationId}] → Claude {Model} | max_tokens={MaxTokens} | temperature={Temperature} | thinking_disabled={ThinkingDisabled} | sys={SysLen} chars | user={UserLen} chars",
+                correlationId, effectiveModel, effectiveMaxTokens, effectiveTemperature, disableThinking,
                 systemPrompt.Length, userMessage.Length);
 
             return await PostMessagesAsync(json, [BetaPromptCaching], correlationId, ct);
@@ -92,6 +105,8 @@ namespace AIWebservice.Services
             IReadOnlyList<string> fileIds,
             string? model = null,
             int? maxTokens = null,
+            double? temperature = null,
+            bool disableThinking = true,
             string? correlationId = null,
             CancellationToken ct = default)
         {
@@ -100,6 +115,7 @@ namespace AIWebservice.Services
 
             var effectiveModel = string.IsNullOrWhiteSpace(model) ? _settings.DefaultModel : model;
             var effectiveMaxTokens = maxTokens ?? _settings.MaxTokens;
+            var effectiveTemperature = temperature ?? _settings.DefaultTemperature;
 
             // Order: documents first, then the textual prompt — Anthropic recommends this for
             // best citation/answer quality.
@@ -112,14 +128,16 @@ namespace AIWebservice.Services
                 Model: effectiveModel,
                 MaxTokens: effectiveMaxTokens,
                 System: [new ClaudeSystemBlock("text", systemPrompt, new CacheControl("ephemeral"))],
-                Messages: [new ClaudeBlockMessage("user", contentBlocks)]
+                Messages: [new ClaudeBlockMessage("user", contentBlocks)],
+                Temperature: effectiveTemperature,
+                Thinking: disableThinking ? DisabledThinking : null
             );
 
             var json = JsonSerializer.Serialize(requestBody, _jsonOptions);
 
             _logger.LogDebug(
-                "[{CorrelationId}] → Claude {Model} | max_tokens={MaxTokens} | files={FileCount} | prompt={PromptLen} chars",
-                correlationId, effectiveModel, effectiveMaxTokens,
+                "[{CorrelationId}] → Claude {Model} | max_tokens={MaxTokens} | temperature={Temperature} | thinking_disabled={ThinkingDisabled} | files={FileCount} | prompt={PromptLen} chars",
+                correlationId, effectiveModel, effectiveMaxTokens, effectiveTemperature, disableThinking,
                 fileIds.Count, userPrompt.Length);
 
             return await PostMessagesAsync(json, [BetaPromptCaching, BetaFilesApi], correlationId, ct);
@@ -283,15 +301,57 @@ namespace AIWebservice.Services
 
                 if (parsed is not null && parsed.Content.Count > 0)
                 {
-                    var text = string.Concat(parsed.Content.Select(b => b.Text));
+                    // Only concatenate genuine "text" blocks. Other block types (e.g. "thinking",
+                    // "redacted_thinking", future types) must never be treated as the answer —
+                    // concatenating them blindly is what let raw reasoning leak into responses.
+                    var textBlocks = parsed.Content.Where(b => b.Type == "text").ToList();
+                    var text = string.Concat(textBlocks.Select(b => b.Text));
                     var usage = parsed.Usage;
 
+                    var nonTextTypes = parsed.Content
+                        .Where(b => b.Type != "text")
+                        .Select(b => b.Type)
+                        .Distinct()
+                        .ToList();
+
                     _logger.LogInformation(
-                        "[{CorrelationId}] ← Claude {Model} | in={In} out={Out} tokens | cache_write={CW} cache_read={CR} | stop={Stop}",
+                        "[{CorrelationId}] ← Claude {Model} | in={In} out={Out} tokens | cache_write={CW} cache_read={CR} | stop={Stop} | blockTypes={BlockTypes}",
                         correlationId, parsed.Model,
                         usage.InputTokens, usage.OutputTokens,
                         usage.CacheCreationInputTokens, usage.CacheReadInputTokens,
-                        parsed.StopReason);
+                        parsed.StopReason,
+                        string.Join(",", parsed.Content.Select(b => b.Type).Distinct()));
+
+                    if (nonTextTypes.Count > 0)
+                    {
+                        _logger.LogWarning(
+                            "[{CorrelationId}] Response contained non-text block types: {Types}",
+                            correlationId, string.Join(",", nonTextTypes));
+                    }
+
+                    if (string.IsNullOrWhiteSpace(text))
+                    {
+                        // Every block was non-text (e.g. only "thinking"), or text blocks were empty.
+                        // Treat this the same as an empty response rather than returning blank/null
+                        // text as if it were a successful answer.
+                        _logger.LogError(
+                            "[{CorrelationId}] No usable text block in response (stop_reason={StopReason}, blockTypes={BlockTypes}). Raw={Raw}",
+                            correlationId, parsed.StopReason, string.Join(",", parsed.Content.Select(b => b.Type)),
+                            responseJson.Length > 500 ? responseJson[..500] : responseJson);
+
+                        if (attempt < MaxRetries)
+                        {
+                            var delayMs = 500 * (attempt + 1);
+                            await Task.Delay(delayMs, ct);
+                            continue;
+                        }
+
+                        throw new AnthropicApiException(500, "no_text_content",
+                            $"Anthropic returned no usable text content (stop_reason={parsed.StopReason}, " +
+                            $"block types: {string.Join(",", nonTextTypes)}). If this model has thinking " +
+                            "enabled by default, verify the request is sending thinking:{type:\"disabled\"} " +
+                            "or that max_tokens leaves enough room for both thinking and the text response.");
+                    }
 
                     return (text, usage, parsed.Model);
                 }

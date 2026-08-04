@@ -6,7 +6,13 @@ namespace AIWebservice.Models
         [property: JsonPropertyName("model")] string Model,
         [property: JsonPropertyName("max_tokens")] int MaxTokens,
         [property: JsonPropertyName("system")] IReadOnlyList<ClaudeSystemBlock> System,
-        [property: JsonPropertyName("messages")] IReadOnlyList<ClaudeMessage> Messages
+        [property: JsonPropertyName("messages")] IReadOnlyList<ClaudeMessage> Messages,
+        [property: JsonPropertyName("temperature")] double Temperature = 0.0,
+        [property: JsonPropertyName("thinking")] ClaudeThinkingConfig? Thinking = null
+    );
+
+    public sealed record ClaudeThinkingConfig(
+        [property: JsonPropertyName("type")] string Type // "disabled" or "adaptive" — verify accepted values against your resolved model's docs
     );
 
     public sealed record ClaudeSystemBlock(
@@ -30,7 +36,9 @@ namespace AIWebservice.Models
         [property: JsonPropertyName("model")] string Model,
         [property: JsonPropertyName("max_tokens")] int MaxTokens,
         [property: JsonPropertyName("system")] IReadOnlyList<ClaudeSystemBlock> System,
-        [property: JsonPropertyName("messages")] IReadOnlyList<ClaudeBlockMessage> Messages
+        [property: JsonPropertyName("messages")] IReadOnlyList<ClaudeBlockMessage> Messages,
+        [property: JsonPropertyName("temperature")] double Temperature = 0.0,
+        [property: JsonPropertyName("thinking")] ClaudeThinkingConfig? Thinking = null
     );
 
     public sealed record ClaudeBlockMessage(

@@ -1,4 +1,3 @@
-// file name: RegNoReviewService.cs
 using AIWebservice.Models;
 using AIWebservice.Models.coa;
 using AIWebservice.Repositories;
@@ -16,6 +15,11 @@ namespace AIWebservice.Services
             "single registration number along with a prompt describing what to analyse. Base your " +
             "answer strictly on the supplied rows; do not invent values. When citing a finding, " +
             "reference the parameter and group code so the analyst can locate the row.";
+
+        // Deterministic rule-checking, not creative generation — a low/zero temperature
+        // reduces (but does not eliminate) run-to-run variance in which rule violations
+        // get surfaced against the same data.
+        private const double ReviewTemperature = 0.0;
 
         private static readonly JsonSerializerOptions _jsonOpts = new()
         {
@@ -85,6 +89,7 @@ namespace AIWebservice.Services
                 userMessage: userMessage,
                 model: request.ModelOverride,
                 maxTokens: request.MaxTokensOverride,
+                temperature: ReviewTemperature,
                 correlationId: correlationId,
                 ct: ct);
 
