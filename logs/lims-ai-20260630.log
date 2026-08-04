@@ -1,0 +1,134 @@
+2026-06-30 10:55:59.745 [INF] Starting LIMS AI Middleware...
+2026-06-30 10:56:00.198 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-06-30 10:56:52.512 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 41.813 ms
+2026-06-30 10:56:52.797 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260522003
+2026-06-30 10:56:52.803 +05:30 [INF] [d9c88efe-d315-409e-8f41-3c19be829767] CoA fetch+review regNo=EFRAC/FDS/260522003
+2026-06-30 10:57:28.294 +05:30 [ERR] HTTP POST /api/find/fetch-review responded 500 in 35731.251 ms
+System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: The I/O operation has been aborted because of either a thread exit or an application request..
+ ---> System.Net.Sockets.SocketException (995): The I/O operation has been aborted because of either a thread exit or an application request.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 250
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-30 10:57:28.353 +05:30 [ERR] [0HNMMD0OJB6LL:00000002] Unhandled TaskCanceledException: The operation was canceled.
+System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: The I/O operation has been aborted because of either a thread exit or an application request..
+ ---> System.Net.Sockets.SocketException (995): The I/O operation has been aborted because of either a thread exit or an application request.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 250
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\birattam\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-06-30 11:01:36.253 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 1.143 ms
+2026-06-30 11:01:36.262 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/WTR/260615001
+2026-06-30 11:01:36.263 +05:30 [INF] [c3d86aef-c4ca-4bbb-aa92-16718fd8b82a] CoA fetch+review regNo=EFRAC/WTR/260615001
+2026-06-30 11:02:40.422 +05:30 [INF] [c3d86aef-c4ca-4bbb-aa92-16718fd8b82a] ← Claude claude-sonnet-4-6 | in=42552 out=4096 tokens | cache_write=0 cache_read=5644 | stop=max_tokens
+2026-06-30 11:02:40.429 +05:30 [INF] [c3d86aef-c4ca-4bbb-aa92-16718fd8b82a] CoA review completed | rows=83 | model=claude-sonnet-4-6 | tokens=46648
+2026-06-30 11:02:40.525 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 64267.837 ms
+2026-06-30 11:58:24.312 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.757 ms
+2026-06-30 11:58:24.327 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/WTR/260615001
+2026-06-30 11:58:24.328 +05:30 [INF] [1156f9b9-4fed-418c-b3b8-bbaa87122329] CoA fetch+review regNo=EFRAC/WTR/260615001
+2026-06-30 11:59:22.895 +05:30 [INF] [1156f9b9-4fed-418c-b3b8-bbaa87122329] ← Claude claude-sonnet-4-6 | in=42552 out=4096 tokens | cache_write=5948 cache_read=0 | stop=max_tokens
+2026-06-30 11:59:22.900 +05:30 [INF] [1156f9b9-4fed-418c-b3b8-bbaa87122329] CoA review completed | rows=83 | model=claude-sonnet-4-6 | tokens=46648
+2026-06-30 11:59:22.912 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 58594.211 ms
+2026-06-30 12:06:08.334 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.201 ms
+2026-06-30 12:06:08.340 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/WTR/260615001
+2026-06-30 12:06:08.342 +05:30 [INF] [c17d972a-ef6e-40c0-9f06-51233d83a04e] CoA fetch+review regNo=EFRAC/WTR/260615001
+2026-06-30 12:07:09.598 +05:30 [INF] [c17d972a-ef6e-40c0-9f06-51233d83a04e] ← Claude claude-sonnet-4-6 | in=42552 out=4096 tokens | cache_write=6137 cache_read=0 | stop=max_tokens
+2026-06-30 12:07:09.601 +05:30 [INF] [c17d972a-ef6e-40c0-9f06-51233d83a04e] CoA review completed | rows=83 | model=claude-sonnet-4-6 | tokens=46648
+2026-06-30 12:07:09.606 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 61268.081 ms
+2026-06-30 12:49:15.917 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.869 ms
+2026-06-30 12:49:15.928 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/WTR/260615001
+2026-06-30 12:49:15.929 +05:30 [INF] [b28c577f-e331-49e8-8956-9a823060fd87] CoA fetch+review regNo=EFRAC/WTR/260615001
+2026-06-30 12:50:18.526 +05:30 [INF] [b28c577f-e331-49e8-8956-9a823060fd87] ← Claude claude-sonnet-4-6 | in=42552 out=4096 tokens | cache_write=6331 cache_read=0 | stop=max_tokens
+2026-06-30 12:50:18.530 +05:30 [INF] [b28c577f-e331-49e8-8956-9a823060fd87] CoA review completed | rows=83 | model=claude-sonnet-4-6 | tokens=46648
+2026-06-30 12:50:18.549 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 62626.204 ms
+2026-06-30 12:56:38.600 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.178 ms
+2026-06-30 12:56:38.607 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/WTR/260615001
+2026-06-30 12:56:38.608 +05:30 [INF] [94377d8d-d69b-4b0f-b523-7b4b7cfcb9d0] CoA fetch+review regNo=EFRAC/WTR/260615001
+2026-06-30 12:57:36.657 +05:30 [INF] [94377d8d-d69b-4b0f-b523-7b4b7cfcb9d0] ← Claude claude-sonnet-4-6 | in=42552 out=4096 tokens | cache_write=5835 cache_read=0 | stop=max_tokens
+2026-06-30 12:57:36.659 +05:30 [INF] [94377d8d-d69b-4b0f-b523-7b4b7cfcb9d0] CoA review completed | rows=83 | model=claude-sonnet-4-6 | tokens=46648
+2026-06-30 12:57:36.667 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 58062.267 ms
+2026-06-30 13:14:51.286 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.298 ms
+2026-06-30 13:14:51.293 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260522003
+2026-06-30 13:14:51.293 +05:30 [INF] [26f6fec9-8274-4b1d-b1ed-761b3e033833] CoA fetch+review regNo=EFRAC/FDS/260522003
+2026-06-30 13:15:56.208 +05:30 [INF] [26f6fec9-8274-4b1d-b1ed-761b3e033833] ← Claude claude-sonnet-4-6 | in=15902 out=4096 tokens | cache_write=5835 cache_read=0 | stop=max_tokens
+2026-06-30 13:15:56.210 +05:30 [INF] [26f6fec9-8274-4b1d-b1ed-761b3e033833] CoA review completed | rows=34 | model=claude-sonnet-4-6 | tokens=19998
+2026-06-30 13:15:56.212 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 64921.165 ms
+2026-06-30 14:03:16.896 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.245 ms
+2026-06-30 14:03:16.901 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260522003
+2026-06-30 14:03:16.903 +05:30 [INF] [f6e2c500-9861-4d15-bfb4-cb7148c1d544] CoA fetch+review regNo=EFRAC/FDS/260522003
+2026-06-30 14:04:20.375 +05:30 [INF] [f6e2c500-9861-4d15-bfb4-cb7148c1d544] ← Claude claude-sonnet-4-6 | in=15902 out=4096 tokens | cache_write=6118 cache_read=0 | stop=max_tokens
+2026-06-30 14:04:20.380 +05:30 [INF] [f6e2c500-9861-4d15-bfb4-cb7148c1d544] CoA review completed | rows=34 | model=claude-sonnet-4-6 | tokens=19998
+2026-06-30 14:04:20.386 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 63486.691 ms

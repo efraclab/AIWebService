@@ -1,0 +1,11 @@
+namespace AIWebservice.Models
+{
+    public sealed class AIReviewWithBalanceResponse
+    {
+        public AIReviewResponse Review          { get; init; } = null!;
+        public decimal          BalanceBefore   { get; init; }
+        public decimal          BalanceAfter    { get; init; }
+        public decimal          CreditsConsumed { get; init; }
+        public string           Currency        { get; init; } = "USD";
+    }
+}

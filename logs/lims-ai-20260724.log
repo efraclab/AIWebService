@@ -1,0 +1,195 @@
+2026-07-24 12:27:07.293 +05:30 [INF] GET /api/find/approval/EFRAC/WTR/260718015
+2026-07-24 12:27:07.301 +05:30 [INF] CoA approval fetch regNo=EFRAC/WTR/260718015
+2026-07-24 12:27:07.368 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 78.465 ms
+2026-07-24 12:27:07.372 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.106 ms
+2026-07-24 12:27:07.381 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/WTR/260718015
+2026-07-24 12:27:07.382 +05:30 [INF] [cid-mryl7z8q-hc0edpj5] CoA fetch+review regNo=EFRAC/WTR/260718015
+2026-07-24 12:28:06.059 +05:30 [INF] [cid-mryl7z8q-hc0edpj5] ← Claude claude-sonnet-4-6 | in=12218 out=4096 tokens | cache_write=14065 cache_read=0 | stop=max_tokens
+2026-07-24 12:28:06.066 +05:30 [INF] [cid-mryl7z8q-hc0edpj5] CoA review completed | rows=31 | model=claude-sonnet-4-6 | tokens=16314
+2026-07-24 12:28:06.072 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 58693.303 ms
+2026-07-24 12:28:06.213 +05:30 [INF] GET /api/find/approval/EFRAC/WTR/260718015
+2026-07-24 12:28:06.214 +05:30 [INF] CoA approval fetch regNo=EFRAC/WTR/260718015
+2026-07-24 12:28:06.227 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 14.801 ms
+2026-07-24 12:28:06.230 +05:30 [INF] GET /api/find/approval/EFRAC/WTR/260718015
+2026-07-24 12:28:06.231 +05:30 [INF] CoA approval fetch regNo=EFRAC/WTR/260718015
+2026-07-24 12:28:06.242 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 12.541 ms
+2026-07-24 12:36:05.177 +05:30 [INF] GET /api/find/approval/EFRAC/WTR/260718015
+2026-07-24 12:36:05.178 +05:30 [INF] CoA approval fetch regNo=EFRAC/WTR/260718015
+2026-07-24 12:36:05.239 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 63.644 ms
+2026-07-24 12:36:05.243 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.074 ms
+2026-07-24 12:36:05.259 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/WTR/260718015
+2026-07-24 12:36:05.260 +05:30 [INF] [cid-mrylji9l-x0n1bl7f] CoA fetch+review regNo=EFRAC/WTR/260718015
+2026-07-24 12:37:06.699 +05:30 [INF] [cid-mrylji9l-x0n1bl7f] ← Claude claude-sonnet-4-6 | in=12218 out=4096 tokens | cache_write=14358 cache_read=0 | stop=max_tokens
+2026-07-24 12:37:06.705 +05:30 [INF] [cid-mrylji9l-x0n1bl7f] CoA review completed | rows=31 | model=claude-sonnet-4-6 | tokens=16314
+2026-07-24 12:37:06.710 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 61461.123 ms
+2026-07-24 12:37:06.794 +05:30 [INF] GET /api/find/approval/EFRAC/WTR/260718015
+2026-07-24 12:37:06.795 +05:30 [INF] CoA approval fetch regNo=EFRAC/WTR/260718015
+2026-07-24 12:37:06.838 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 44.514 ms
+2026-07-24 12:37:06.842 +05:30 [INF] GET /api/find/approval/EFRAC/WTR/260718015
+2026-07-24 12:37:06.843 +05:30 [INF] CoA approval fetch regNo=EFRAC/WTR/260718015
+2026-07-24 12:37:06.889 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 47.931 ms
+2026-07-24 12:39:00.343 +05:30 [INF] GET /api/find/approval/EFRAC/WTR/260718015
+2026-07-24 12:39:00.344 +05:30 [INF] CoA approval fetch regNo=EFRAC/WTR/260718015
+2026-07-24 12:39:00.361 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 19.071 ms
+2026-07-24 12:39:00.366 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.075 ms
+2026-07-24 12:39:00.370 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/WTR/260718015
+2026-07-24 12:39:00.372 +05:30 [INF] [cid-mryln9e3-qwiayhir] CoA fetch+review regNo=EFRAC/WTR/260718015
+2026-07-24 12:39:59.428 +05:30 [INF] [cid-mryln9e3-qwiayhir] ← Claude claude-sonnet-4-6 | in=12218 out=4096 tokens | cache_write=0 cache_read=14358 | stop=max_tokens
+2026-07-24 12:39:59.434 +05:30 [INF] [cid-mryln9e3-qwiayhir] CoA review completed | rows=31 | model=claude-sonnet-4-6 | tokens=16314
+2026-07-24 12:39:59.440 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 59071.148 ms
+2026-07-24 12:39:59.612 +05:30 [INF] GET /api/find/approval/EFRAC/WTR/260718015
+2026-07-24 12:39:59.613 +05:30 [INF] CoA approval fetch regNo=EFRAC/WTR/260718015
+2026-07-24 12:39:59.637 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 25.463 ms
+2026-07-24 12:39:59.640 +05:30 [INF] GET /api/find/approval/EFRAC/WTR/260718015
+2026-07-24 12:39:59.641 +05:30 [INF] CoA approval fetch regNo=EFRAC/WTR/260718015
+2026-07-24 12:39:59.658 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 19.232 ms
+2026-07-24 12:45:27.026 +05:30 [INF] GET /api/find/approval/EFRAC/WTR/260718015
+2026-07-24 12:45:27.027 +05:30 [INF] CoA approval fetch regNo=EFRAC/WTR/260718015
+2026-07-24 12:45:27.084 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 59.277 ms
+2026-07-24 12:45:27.089 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.105 ms
+2026-07-24 12:45:27.093 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/WTR/260718015
+2026-07-24 12:45:27.095 +05:30 [INF] [cid-mrylvjse-vla3223t] CoA fetch+review regNo=EFRAC/WTR/260718015
+2026-07-24 12:46:27.117 +05:30 [INF] [cid-mrylvjse-vla3223t] ← Claude claude-sonnet-4-6 | in=12218 out=4096 tokens | cache_write=14523 cache_read=0 | stop=max_tokens
+2026-07-24 12:46:27.119 +05:30 [INF] [cid-mrylvjse-vla3223t] CoA review completed | rows=31 | model=claude-sonnet-4-6 | tokens=16314
+2026-07-24 12:46:27.121 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 60029.227 ms
+2026-07-24 12:46:27.193 +05:30 [INF] GET /api/find/approval/EFRAC/WTR/260718015
+2026-07-24 12:46:27.195 +05:30 [INF] CoA approval fetch regNo=EFRAC/WTR/260718015
+2026-07-24 12:46:27.205 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 12.462 ms
+2026-07-24 12:46:27.208 +05:30 [INF] GET /api/find/approval/EFRAC/WTR/260718015
+2026-07-24 12:46:27.209 +05:30 [INF] CoA approval fetch regNo=EFRAC/WTR/260718015
+2026-07-24 12:46:27.224 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 16.277 ms
+2026-07-24 12:50:28.476 +05:30 [INF] GET /api/find/approval/EFRAC/WTR/260718015
+2026-07-24 12:50:28.477 +05:30 [INF] CoA approval fetch regNo=EFRAC/WTR/260718015
+2026-07-24 12:50:28.489 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 12.937 ms
+2026-07-24 12:50:28.494 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.083 ms
+2026-07-24 12:50:28.502 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/WTR/260718015
+2026-07-24 12:50:28.502 +05:30 [INF] [cid-mrym20cr-chxb2fzn] CoA fetch+review regNo=EFRAC/WTR/260718015
+2026-07-24 12:51:28.094 +05:30 [INF] [cid-mrym20cr-chxb2fzn] ← Claude claude-sonnet-4-6 | in=12218 out=4096 tokens | cache_write=14313 cache_read=0 | stop=max_tokens
+2026-07-24 12:51:28.102 +05:30 [INF] [cid-mrym20cr-chxb2fzn] CoA review completed | rows=31 | model=claude-sonnet-4-6 | tokens=16314
+2026-07-24 12:51:28.108 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 59610.836 ms
+2026-07-24 12:51:28.217 +05:30 [INF] GET /api/find/approval/EFRAC/WTR/260718015
+2026-07-24 12:51:28.218 +05:30 [INF] CoA approval fetch regNo=EFRAC/WTR/260718015
+2026-07-24 12:51:28.229 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 13.110 ms
+2026-07-24 12:51:28.233 +05:30 [INF] GET /api/find/approval/EFRAC/WTR/260718015
+2026-07-24 12:51:28.236 +05:30 [INF] CoA approval fetch regNo=EFRAC/WTR/260718015
+2026-07-24 12:51:28.251 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 18.655 ms
+2026-07-24 13:03:53.207 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260718007
+2026-07-24 13:03:53.209 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260718007
+2026-07-24 13:03:53.260 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 53.652 ms
+2026-07-24 13:03:53.264 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.110 ms
+2026-07-24 13:03:53.268 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260718007
+2026-07-24 13:03:53.269 +05:30 [INF] [cid-mrymj9bi-hevzn75l] CoA fetch+review regNo=EFRAC/FDS/260718007
+2026-07-24 13:04:55.048 +05:30 [INF] [cid-mrymj9bi-hevzn75l] ← Claude claude-sonnet-4-6 | in=9456 out=4096 tokens | cache_write=14313 cache_read=0 | stop=max_tokens
+2026-07-24 13:04:55.058 +05:30 [INF] [cid-mrymj9bi-hevzn75l] CoA review completed | rows=24 | model=claude-sonnet-4-6 | tokens=13552
+2026-07-24 13:04:55.064 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 61796.683 ms
+2026-07-24 13:04:55.154 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260718007
+2026-07-24 13:04:55.155 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260718007
+2026-07-24 13:04:55.168 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 14.996 ms
+2026-07-24 13:04:55.171 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260718007
+2026-07-24 13:04:55.172 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260718007
+2026-07-24 13:04:55.185 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 13.860 ms
+2026-07-24 14:01:37.231 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260718007
+2026-07-24 14:01:37.232 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260718007
+2026-07-24 14:01:37.321 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 90.780 ms
+2026-07-24 14:01:37.326 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.076 ms
+2026-07-24 14:01:37.332 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260718007
+2026-07-24 14:01:37.333 +05:30 [INF] [cid-mryoli7f-7ej1l6k2] CoA fetch+review regNo=EFRAC/FDS/260718007
+2026-07-24 14:02:39.856 +05:30 [INF] [cid-mryoli7f-7ej1l6k2] ← Claude claude-sonnet-4-6 | in=9456 out=4096 tokens | cache_write=14313 cache_read=0 | stop=max_tokens
+2026-07-24 14:02:39.858 +05:30 [INF] [cid-mryoli7f-7ej1l6k2] CoA review completed | rows=24 | model=claude-sonnet-4-6 | tokens=13552
+2026-07-24 14:02:39.862 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 62532.718 ms
+2026-07-24 14:02:39.965 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260718007
+2026-07-24 14:02:39.967 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260718007
+2026-07-24 14:02:39.976 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 13.169 ms
+2026-07-24 14:02:39.978 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260718007
+2026-07-24 14:02:39.979 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260718007
+2026-07-24 14:02:39.993 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 14.894 ms
+2026-07-24 14:31:27.620 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260718007
+2026-07-24 14:31:27.621 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260718007
+2026-07-24 14:31:27.813 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 194.294 ms
+2026-07-24 14:31:27.820 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.287 ms
+2026-07-24 14:31:27.829 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260718007
+2026-07-24 14:31:27.829 +05:30 [INF] [cid-mrypnvrc-8zt9qkhi] CoA fetch+review regNo=EFRAC/FDS/260718007
+2026-07-24 14:32:32.382 +05:30 [INF] [cid-mrypnvrc-8zt9qkhi] ← Claude claude-sonnet-4-6 | in=9456 out=4096 tokens | cache_write=14673 cache_read=0 | stop=max_tokens
+2026-07-24 14:32:32.385 +05:30 [INF] [cid-mrypnvrc-8zt9qkhi] CoA review completed | rows=24 | model=claude-sonnet-4-6 | tokens=13552
+2026-07-24 14:32:32.390 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 64564.509 ms
+2026-07-24 14:32:32.449 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260718007
+2026-07-24 14:32:32.450 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260718007
+2026-07-24 14:32:32.485 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 36.258 ms
+2026-07-24 14:32:32.487 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260718007
+2026-07-24 14:32:32.488 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260718007
+2026-07-24 14:32:32.528 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 40.331 ms
+2026-07-24 14:36:02.327 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260718007
+2026-07-24 14:36:02.328 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260718007
+2026-07-24 14:36:02.365 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 38.154 ms
+2026-07-24 14:36:02.369 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.119 ms
+2026-07-24 14:36:02.373 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260718007
+2026-07-24 14:36:02.373 +05:30 [INF] [cid-mryptrlq-w5z1mfjw] CoA fetch+review regNo=EFRAC/FDS/260718007
+2026-07-24 14:37:05.009 +05:30 [INF] [cid-mryptrlq-w5z1mfjw] ← Claude claude-sonnet-4-6 | in=9456 out=4096 tokens | cache_write=0 cache_read=14673 | stop=max_tokens
+2026-07-24 14:37:05.012 +05:30 [INF] [cid-mryptrlq-w5z1mfjw] CoA review completed | rows=24 | model=claude-sonnet-4-6 | tokens=13552
+2026-07-24 14:37:05.015 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 62644.065 ms
+2026-07-24 14:37:05.086 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260718007
+2026-07-24 14:37:05.087 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260718007
+2026-07-24 14:37:05.122 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 36.844 ms
+2026-07-24 14:37:05.124 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260718007
+2026-07-24 14:37:05.125 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260718007
+2026-07-24 14:37:05.161 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 37.367 ms
+2026-07-24 16:26:12.078 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-24 16:26:12.080 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-24 16:26:12.150 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 74.518 ms
+2026-07-24 16:26:12.155 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.257 ms
+2026-07-24 16:26:12.159 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-24 16:26:12.160 +05:30 [INF] [cid-mrytrfqw-x3k05cqu] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-24 16:27:18.556 +05:30 [INF] [cid-mrytrfqw-x3k05cqu] ← Claude claude-sonnet-4-6 | in=19874 out=4096 tokens | cache_write=15018 cache_read=0 | stop=max_tokens
+2026-07-24 16:27:18.561 +05:30 [INF] [cid-mrytrfqw-x3k05cqu] CoA review completed | rows=42 | model=claude-sonnet-4-6 | tokens=23970
+2026-07-24 16:27:18.569 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 66410.870 ms
+2026-07-24 16:27:18.725 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-24 16:27:18.726 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-24 16:27:18.743 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 18.128 ms
+2026-07-24 16:27:18.746 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-24 16:27:18.747 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-24 16:27:18.757 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 11.944 ms
+2026-07-24 16:30:04.620 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-24 16:30:04.621 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-24 16:30:04.635 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 15.850 ms
+2026-07-24 16:30:04.642 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.094 ms
+2026-07-24 16:30:04.648 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260312005
+2026-07-24 16:30:04.649 +05:30 [INF] [cid-mrytwf4v-9o39yx1i] CoA fetch+review regNo=EFRAC/FDS/260312005
+2026-07-24 16:31:11.914 +05:30 [INF] [cid-mrytwf4v-9o39yx1i] ← Claude claude-sonnet-4-6 | in=19874 out=4096 tokens | cache_write=15100 cache_read=0 | stop=max_tokens
+2026-07-24 16:31:11.921 +05:30 [INF] [cid-mrytwf4v-9o39yx1i] CoA review completed | rows=42 | model=claude-sonnet-4-6 | tokens=23970
+2026-07-24 16:31:11.923 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 67276.222 ms
+2026-07-24 16:31:11.992 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-24 16:31:11.993 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-24 16:31:12.004 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 11.920 ms
+2026-07-24 16:31:12.008 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260312005
+2026-07-24 16:31:12.009 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260312005
+2026-07-24 16:31:12.024 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 15.814 ms
+2026-07-24 16:31:57.621 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-24 16:31:57.622 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-24 16:31:57.630 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 9.403 ms
+2026-07-24 16:31:57.635 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.146 ms
+2026-07-24 16:31:57.640 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260512148
+2026-07-24 16:31:57.642 +05:30 [INF] [cid-mrytyubk-zknre6l1] CoA fetch+review regNo=EFRAC/FDS/260512148
+2026-07-24 16:33:02.995 +05:30 [INF] [cid-mrytyubk-zknre6l1] ← Claude claude-sonnet-4-6 | in=31165 out=4096 tokens | cache_write=0 cache_read=15100 | stop=max_tokens
+2026-07-24 16:33:03.000 +05:30 [INF] [cid-mrytyubk-zknre6l1] CoA review completed | rows=67 | model=claude-sonnet-4-6 | tokens=35261
+2026-07-24 16:33:03.004 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 65365.062 ms
+2026-07-24 16:33:03.078 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-24 16:33:03.078 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-24 16:33:03.091 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 14.175 ms
+2026-07-24 16:33:03.094 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-24 16:33:03.095 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-24 16:33:03.110 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 15.485 ms
+2026-07-24 16:37:17.901 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-24 16:37:17.902 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-24 16:37:17.918 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 16.670 ms
+2026-07-24 16:37:17.923 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.052 ms
+2026-07-24 16:37:17.927 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260512148
+2026-07-24 16:37:17.927 +05:30 [INF] [cid-mryu5pgg-fqna83yk] CoA fetch+review regNo=EFRAC/FDS/260512148
+2026-07-24 16:38:20.510 +05:30 [INF] [cid-mryu5pgg-fqna83yk] ← Claude claude-sonnet-4-6 | in=31165 out=4096 tokens | cache_write=15308 cache_read=0 | stop=max_tokens
+2026-07-24 16:38:20.516 +05:30 [INF] [cid-mryu5pgg-fqna83yk] CoA review completed | rows=67 | model=claude-sonnet-4-6 | tokens=35261
+2026-07-24 16:38:20.520 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 62594.340 ms
+2026-07-24 16:38:20.603 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-24 16:38:20.605 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-24 16:38:20.627 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 23.868 ms
+2026-07-24 16:38:20.630 +05:30 [INF] GET /api/find/approval/EFRAC/FDS/260512148
+2026-07-24 16:38:20.630 +05:30 [INF] CoA approval fetch regNo=EFRAC/FDS/260512148
+2026-07-24 16:38:20.647 +05:30 [INF] HTTP GET /api/find/approval responded 404 in 17.521 ms

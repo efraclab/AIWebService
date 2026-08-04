@@ -1,0 +1,9 @@
+namespace AIWebservice.Models
+{
+    public sealed class CreditBalance
+    {
+        public decimal Available { get; init; }
+        public decimal Used      { get; init; }
+        public string  Currency  { get; init; } = "USD";
+    }
+}

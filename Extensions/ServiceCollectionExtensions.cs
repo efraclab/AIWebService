@@ -1,5 +1,9 @@
 ﻿using AIWebservice.Configuration;
 using AIWebservice.Filters;
+<<<<<<< HEAD
+=======
+using AIWebservice.Repositories;
+>>>>>>> origin/main
 using AIWebservice.Services;
 using Microsoft.AspNetCore.RateLimiting;
 using System.Threading.RateLimiting;
@@ -16,10 +20,23 @@ namespace AIWebservice.Extensions
             services.Configure<AnthropicSettings>(
                 configuration.GetSection(AnthropicSettings.SectionName));
 
+<<<<<<< HEAD
             services.AddHttpClient<ClaudeService>();
 
             services.AddSingleton<PromptTemplateService>();
             services.AddScoped<LimsProcessingService>();
+=======
+            services.Configure<CacheSettings>(
+                configuration.GetSection(CacheSettings.SectionName));
+
+            services.AddHttpClient<ClaudeService>();
+            services.AddHttpClient<AnthropicBillingService>();
+            services.AddSingleton<PromptTemplateService>();
+            services.AddScoped<AIReviewProcessingService>();
+            services.AddScoped<ReportReviewService>();
+            services.AddScoped<RegNoReviewRepository>();
+            services.AddScoped<RegNoReviewService>();
+>>>>>>> origin/main
 
             services.AddMemoryCache();
 

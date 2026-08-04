@@ -1,0 +1,62 @@
+2026-07-01 12:28:46.130 [INF] Starting LIMS AI Middleware...
+2026-07-01 12:28:46.891 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-07-01 12:29:38.551 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 49.960 ms
+2026-07-01 12:29:38.842 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/WTR/260531077
+2026-07-01 12:29:38.853 +05:30 [INF] [cid-mr1q6men-2jdmfg54] CoA fetch+review regNo=EFRAC/WTR/260531077
+2026-07-01 12:30:42.887 +05:30 [INF] [cid-mr1q6men-2jdmfg54] ← Claude claude-sonnet-4-6 | in=14553 out=4096 tokens | cache_write=6118 cache_read=0 | stop=max_tokens
+2026-07-01 12:30:42.899 +05:30 [INF] [cid-mr1q6men-2jdmfg54] CoA review completed | rows=36 | model=claude-sonnet-4-6 | tokens=18649
+2026-07-01 12:30:42.960 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 64368.053 ms
+2026-07-01 12:46:10.842 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 2.582 ms
+2026-07-01 12:46:10.851 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/WTR/260531077
+2026-07-01 12:46:10.853 +05:30 [INF] [cid-mr1qrw7m-mzqe2hqd] CoA fetch+review regNo=EFRAC/WTR/260531077
+2026-07-01 12:47:14.504 +05:30 [INF] [cid-mr1qrw7m-mzqe2hqd] ← Claude claude-sonnet-4-6 | in=14553 out=4096 tokens | cache_write=6265 cache_read=0 | stop=max_tokens
+2026-07-01 12:47:14.515 +05:30 [INF] [cid-mr1qrw7m-mzqe2hqd] CoA review completed | rows=36 | model=claude-sonnet-4-6 | tokens=18649
+2026-07-01 12:47:14.518 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 63670.803 ms
+2026-07-01 13:02:44.035 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.205 ms
+2026-07-01 13:02:44.045 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/WTR/260520001
+2026-07-01 13:02:44.046 +05:30 [INF] [cid-mr1rd6kf-4wnwlvt9] CoA fetch+review regNo=EFRAC/WTR/260520001
+2026-07-01 13:03:51.594 +05:30 [INF] [cid-mr1rd6kf-4wnwlvt9] ← Claude claude-sonnet-4-6 | in=46312 out=4096 tokens | cache_write=6321 cache_read=0 | stop=max_tokens
+2026-07-01 13:03:51.598 +05:30 [INF] [cid-mr1rd6kf-4wnwlvt9] CoA review completed | rows=87 | model=claude-sonnet-4-6 | tokens=50408
+2026-07-01 13:03:51.609 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 67569.987 ms
+2026-07-01 14:03:42.286 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.631 ms
+2026-07-01 14:03:42.300 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/WTR/260520001
+2026-07-01 14:03:42.303 +05:30 [INF] [cid-mr1tjlaf-102s4pit] CoA fetch+review regNo=EFRAC/WTR/260520001
+2026-07-01 14:04:44.840 +05:30 [INF] [cid-mr1tjlaf-102s4pit] ← Claude claude-sonnet-4-6 | in=46312 out=3529 tokens | cache_write=6321 cache_read=0 | stop=end_turn
+2026-07-01 14:04:44.843 +05:30 [INF] [cid-mr1tjlaf-102s4pit] CoA review completed | rows=87 | model=claude-sonnet-4-6 | tokens=49841
+2026-07-01 14:04:44.872 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 62573.992 ms
+2026-07-01 14:37:41.030 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.254 ms
+2026-07-01 14:37:41.036 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/WTR/260520001
+2026-07-01 14:37:41.037 +05:30 [INF] [cid-mr1uraea-5bye0uqz] CoA fetch+review regNo=EFRAC/WTR/260520001
+2026-07-01 14:38:53.205 +05:30 [INF] [cid-mr1uraea-5bye0uqz] ← Claude claude-sonnet-4-6 | in=46312 out=4096 tokens | cache_write=6462 cache_read=0 | stop=max_tokens
+2026-07-01 14:38:53.207 +05:30 [INF] [cid-mr1uraea-5bye0uqz] CoA review completed | rows=87 | model=claude-sonnet-4-6 | tokens=50408
+2026-07-01 14:38:53.210 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 72175.677 ms
+2026-07-01 14:48:29.780 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.283 ms
+2026-07-01 14:48:29.786 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/ENV/260531004
+2026-07-01 14:48:29.788 +05:30 [INF] [cid-mr1v56z4-vyb5jkjw] CoA fetch+review regNo=EFRAC/ENV/260531004
+2026-07-01 14:49:27.202 +05:30 [INF] [cid-mr1v56z4-vyb5jkjw] ← Claude claude-sonnet-4-6 | in=2886 out=3812 tokens | cache_write=6462 cache_read=0 | stop=end_turn
+2026-07-01 14:49:27.207 +05:30 [INF] [cid-mr1v56z4-vyb5jkjw] CoA review completed | rows=6 | model=claude-sonnet-4-6 | tokens=6698
+2026-07-01 14:49:27.218 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 57434.093 ms
+2026-07-01 15:13:41.304 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.476 ms
+2026-07-01 15:13:41.313 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/WTR/260520001
+2026-07-01 15:13:41.317 +05:30 [INF] [cid-mr1w1l9r-73t1cf27] CoA fetch+review regNo=EFRAC/WTR/260520001
+2026-07-01 15:14:49.026 +05:30 [INF] [cid-mr1w1l9r-73t1cf27] ← Claude claude-sonnet-4-6 | in=46312 out=3855 tokens | cache_write=6566 cache_read=0 | stop=end_turn
+2026-07-01 15:14:49.036 +05:30 [INF] [cid-mr1w1l9r-73t1cf27] CoA review completed | rows=87 | model=claude-sonnet-4-6 | tokens=50167
+2026-07-01 15:14:49.052 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 67740.232 ms
+2026-07-01 15:23:12.489 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.283 ms
+2026-07-01 15:23:12.498 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/WTR/260612002
+2026-07-01 15:23:12.500 +05:30 [INF] [cid-mr1wdu02-i4vdm96j] CoA fetch+review regNo=EFRAC/WTR/260612002
+2026-07-01 15:24:14.508 +05:30 [INF] [cid-mr1wdu02-i4vdm96j] ← Claude claude-sonnet-4-6 | in=42233 out=4096 tokens | cache_write=6566 cache_read=0 | stop=max_tokens
+2026-07-01 15:24:14.510 +05:30 [INF] [cid-mr1wdu02-i4vdm96j] CoA review completed | rows=83 | model=claude-sonnet-4-6 | tokens=46329
+2026-07-01 15:24:14.514 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 62018.694 ms
+2026-07-01 15:44:18.553 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.368 ms
+2026-07-01 15:44:18.559 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/WTR/260612002
+2026-07-01 15:44:18.560 +05:30 [INF] [cid-mr1x4ywk-u2nswinu] CoA fetch+review regNo=EFRAC/WTR/260612002
+2026-07-01 15:45:22.002 +05:30 [INF] [cid-mr1x4ywk-u2nswinu] ← Claude claude-sonnet-4-6 | in=42233 out=4096 tokens | cache_write=6596 cache_read=0 | stop=max_tokens
+2026-07-01 15:45:22.010 +05:30 [INF] [cid-mr1x4ywk-u2nswinu] CoA review completed | rows=83 | model=claude-sonnet-4-6 | tokens=46329
+2026-07-01 15:45:22.024 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 63466.095 ms
+2026-07-01 15:59:44.314 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.418 ms
+2026-07-01 15:59:44.320 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/WTR/260612002
+2026-07-01 15:59:44.321 +05:30 [INF] [cid-mr1xot85-e0w2yblb] CoA fetch+review regNo=EFRAC/WTR/260612002
+2026-07-01 16:00:46.094 +05:30 [INF] [cid-mr1xot85-e0w2yblb] ← Claude claude-sonnet-4-6 | in=42233 out=4096 tokens | cache_write=6641 cache_read=0 | stop=max_tokens
+2026-07-01 16:00:46.101 +05:30 [INF] [cid-mr1xot85-e0w2yblb] CoA review completed | rows=83 | model=claude-sonnet-4-6 | tokens=46329
+2026-07-01 16:00:46.104 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 61785.575 ms

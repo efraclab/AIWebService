@@ -1,0 +1,103 @@
+2026-06-28 18:10:38.244 [INF] Starting LIMS AI Middleware...
+2026-06-28 18:10:41.224 +05:30 [INF] LIMS AI Middleware started. Listening on default ports
+2026-06-28 18:17:34.277 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 52.709 ms
+2026-06-28 18:17:34.277 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 52.689 ms
+2026-06-28 18:17:34.664 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260228032
+2026-06-28 18:17:34.664 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260228032
+2026-06-28 18:17:34.677 +05:30 [INF] [cid-mqxsai7h-jjjszukc] CoA fetch+review regNo=EFRAC/FDS/260228032
+2026-06-28 18:17:34.677 +05:30 [INF] [cid-mqxsai6z-ua69tbvp] CoA fetch+review regNo=EFRAC/FDS/260228032
+2026-06-28 18:18:39.266 +05:30 [INF] [cid-mqxsai7h-jjjszukc] ← Claude claude-sonnet-4-6 | in=58720 out=4096 tokens | cache_write=5644 cache_read=0 | stop=max_tokens
+2026-06-28 18:18:39.273 +05:30 [INF] [cid-mqxsai7h-jjjszukc] CoA review completed | rows=125 | model=claude-sonnet-4-6 | tokens=62816
+2026-06-28 18:18:39.376 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 65043.662 ms
+2026-06-28 18:18:40.682 +05:30 [INF] [cid-mqxsai6z-ua69tbvp] ← Claude claude-sonnet-4-6 | in=58720 out=4096 tokens | cache_write=5644 cache_read=0 | stop=max_tokens
+2026-06-28 18:18:40.685 +05:30 [INF] [cid-mqxsai6z-ua69tbvp] CoA review completed | rows=125 | model=claude-sonnet-4-6 | tokens=62816
+2026-06-28 18:18:40.692 +05:30 [INF] HTTP POST /api/find/fetch-review responded 200 in 66358.823 ms
+2026-06-28 18:21:34.560 +05:30 [INF] HTTP OPTIONS /api/find/fetch-review responded 204 in 0.285 ms
+2026-06-28 18:21:34.575 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260228032
+2026-06-28 18:21:34.576 +05:30 [INF] [cid-mqxsfnrw-h7rye5sf] CoA fetch+review regNo=EFRAC/FDS/260228032
+2026-06-28 18:21:34.588 +05:30 [INF] POST /api/find/fetch-review regNo=EFRAC/FDS/260228032
+2026-06-28 18:21:34.592 +05:30 [INF] [cid-mqxsfnsl-q7zgz5n1] CoA fetch+review regNo=EFRAC/FDS/260228032
+2026-06-28 18:21:35.727 +05:30 [ERR] [cid-mqxsfnsl-q7zgz5n1] Anthropic returned HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcVgsqEAN2raU7kJLNbWM"}
+2026-06-28 18:21:35.745 +05:30 [ERR] HTTP POST /api/find/fetch-review responded 500 in 1158.196 ms
+AIWebservice.Models.AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+   at AIWebservice.Services.ClaudeService.EnsureSuccessAsync(HttpResponseMessage response, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 366
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 267
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-28 18:21:35.772 +05:30 [ERR] [cid-mqxsfnrw-h7rye5sf] Anthropic returned HTTP 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcVgspvoAaxRb1vgtUSFg"}
+2026-06-28 18:21:35.825 +05:30 [ERR] HTTP POST /api/find/fetch-review responded 500 in 1261.488 ms
+AIWebservice.Models.AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+   at AIWebservice.Services.ClaudeService.EnsureSuccessAsync(HttpResponseMessage response, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 366
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 267
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-28 18:21:35.828 +05:30 [ERR] [0HNML2DMDQCPQ:00000001] Unhandled AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+AIWebservice.Models.AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+   at AIWebservice.Services.ClaudeService.EnsureSuccessAsync(HttpResponseMessage response, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 366
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 267
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\birattam\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28
+2026-06-28 18:21:35.844 +05:30 [ERR] [0HNML2DMDQCPP:00000002] Unhandled AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+AIWebservice.Models.AnthropicApiException: Anthropic API error (400) [invalid_request_error]: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+   at AIWebservice.Services.ClaudeService.EnsureSuccessAsync(HttpResponseMessage response, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 366
+   at AIWebservice.Services.ClaudeService.PostMessagesAsync(String json, IReadOnlyList`1 betaFeatures, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 267
+   at AIWebservice.Services.ClaudeService.SendAsync(String systemPrompt, String userMessage, String model, Nullable`1 maxTokens, String correlationId, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\ClaudeService.cs:line 81
+   at AIWebservice.Services.RegNoReviewService.FetchAndReviewAsync(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Services\RegNoReviewService.cs:line 83
+   at AIWebservice.Controllers.RegNoReviewController.FetchAndReview(RegNoFetchReviewRequest request, CancellationToken ct) in C:\birattam\.net webservices\AIWebservice\Controllers\RegNoReviewController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at AIWebservice.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext ctx) in C:\birattam\.net webservices\AIWebservice\Middleware\GlobalExceptionMiddleware.cs:line 28

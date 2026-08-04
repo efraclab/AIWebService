@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 using AIWebservice.Extensions;
 using AIWebservice.Middleware;
+=======
+// file name: Program.cs
+using AIWebservice.Extensions;
+using AIWebservice.Middleware;
+using AIWebservice.Services;          // ← fixes "AnthropicBillingService could not be found"
+>>>>>>> origin/main
 using Serilog;
 using Serilog.Events;
 
@@ -16,7 +23,10 @@ Log.Logger = new LoggerConfiguration()
         outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level:u3}] {Message:lj}{NewLine}{Exception}")
     .CreateBootstrapLogger();
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 try
 {
     Log.Information("Starting LIMS AI Middleware...");
@@ -37,6 +47,12 @@ try
                retainedFileCountLimit: 14));
 
     builder.Services.AddLimsServices(builder.Configuration);
+<<<<<<< HEAD
+=======
+    // ↑ AnthropicBillingService is already registered inside AddLimsServices —
+    //   the duplicate builder.Services.AddHttpClient<AnthropicBillingService>()
+    //   that was here has been removed.
+>>>>>>> origin/main
 
     builder.Services.AddCors(options =>
     {
@@ -53,7 +69,11 @@ try
     var app = builder.Build();
 
     app.UseMiddleware<GlobalExceptionMiddleware>();
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> origin/main
     app.UseSerilogRequestLogging(opts =>
     {
         opts.MessageTemplate =
@@ -66,6 +86,7 @@ try
         app.UseSwaggerUI(opts =>
         {
             opts.SwaggerEndpoint("/swagger/v1/swagger.json", "LIMS AI Middleware v1");
+<<<<<<< HEAD
             opts.RoutePrefix = string.Empty;   // Serve Swagger at root "/"
         });
     }
@@ -74,6 +95,18 @@ try
 
     app.UseHttpsRedirection();
     app.UseRateLimiter();
+=======
+            opts.RoutePrefix = string.Empty;
+        });
+    }
+
+    //app.UseHttpsRedirection();
+
+    app.UseCors("AllowReactApp");
+
+    app.UseRateLimiter();
+
+>>>>>>> origin/main
     app.MapControllers();
 
     Log.Information("LIMS AI Middleware started. Listening on {Urls}",
@@ -88,4 +121,8 @@ catch (Exception ex)
 finally
 {
     await Log.CloseAndFlushAsync();
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main
